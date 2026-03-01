@@ -1,4 +1,4 @@
-import { Shield, Lock, Eye, Database, Globe, Mail, Phone, FileText, Clock, AlertCircle } from 'lucide-react';
+import { Shield, Lock, Eye, Database, Globe, Mail, Phone, Clock, AlertCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 

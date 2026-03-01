@@ -10,14 +10,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-    const [theme, setTheme] = useState<Theme>(() => {
-        // Default to dark mode since that's the current dominant style
-        if (typeof window !== 'undefined') {
-            const saved = localStorage.getItem('aerosolar-theme');
-            if (saved === 'dark' || saved === 'light') return saved;
-        }
-        return 'dark';
-    });
+    const [theme, setTheme] = useState<Theme>('light');
 
     useEffect(() => {
         const root = window.document.documentElement;

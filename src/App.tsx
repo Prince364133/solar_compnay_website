@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Leaf, Menu, X, Globe } from 'lucide-react';
-import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Impact from './pages/Impact';
@@ -62,7 +62,6 @@ function AppContent() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
     const [language, setLanguage] = useState('EN');
-    const { theme, toggleTheme: toggleAppTheme } = useTheme();
 
     const toggleLanguage = () => {
         setLanguage(language === 'EN' ? 'ES' : 'EN');

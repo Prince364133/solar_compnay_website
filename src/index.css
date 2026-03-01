@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root,
+  .light {
+    --bg-main: #f0fdf4;
+    /* Light green tint */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #10b981;
+    /* Emerald */
+    --accent-glow: rgba(16, 185, 129, 0.4);
+
+    /* Glassmorphism variables */
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  }
+
+  /* Dark theme overrides */
+  .dark {
+    --bg-main: #020617;
+    /* Very dark slate */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #34d399;
+    /* Light emerald */
+    --accent-glow: rgba(52, 211, 153, 0.3);
+
+    --glass-bg: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    /* Aesthetic abstract background pattern */
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.15), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.15), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .frozen-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .frozen-glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .frozen-glass-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px 0 var(--accent-glow);
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px var(--accent-glow);
+  }
+}

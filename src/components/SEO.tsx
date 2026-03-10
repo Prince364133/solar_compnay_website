@@ -7,7 +7,7 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, type = 'website' }: SEOProps) {
-    const siteName = "AeroSolar Infrastructure";
+    const siteName = "Sai Gayatri Greentech";
     const fullTitle = `${title} | ${siteName}`;
 
     return (

@@ -28,7 +28,7 @@ function CookieSettings() {
 
     const handleSave = () => {
         // In production: set cookie consent to localStorage / cookie
-        localStorage.setItem('aerosolar_cookie_prefs', JSON.stringify(preferences));
+        localStorage.setItem('saigayatrigreentech_cookie_prefs', JSON.stringify(preferences));
         setSaved(true);
         setTimeout(() => setSaved(false), 3000);
     };
@@ -51,7 +51,7 @@ function CookieSettings() {
         {
             key: 'necessary' as keyof CookiePreferences,
             icon: <ShieldCheck size={22} />,
-            color: 'emerald',
+            color: 'lime',
             title: 'Strictly Necessary Cookies',
             required: true,
             description: 'These cookies are essential for the website to function properly. They cannot be disabled. They enable core features such as security, network management, and accessibility.',
@@ -64,7 +64,7 @@ function CookieSettings() {
         {
             key: 'analytics' as keyof CookiePreferences,
             icon: <BarChart3 size={22} />,
-            color: 'sky',
+            color: 'lime',
             title: 'Analytics & Performance Cookies',
             required: false,
             description: 'These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This data helps us improve the site experience.',
@@ -77,7 +77,7 @@ function CookieSettings() {
         {
             key: 'functional' as keyof CookiePreferences,
             icon: <Settings size={22} />,
-            color: 'violet',
+            color: 'green',
             title: 'Functional Cookies',
             required: false,
             description: 'Functional cookies enable enhanced functionality and personalization, such as remembering your preferred language, location, currency, or calculator settings.',
@@ -90,7 +90,7 @@ function CookieSettings() {
         {
             key: 'marketing' as keyof CookiePreferences,
             icon: <Target size={22} />,
-            color: 'amber',
+            color: 'lime',
             title: 'Marketing & Targeting Cookies',
             required: false,
             description: 'These cookies track your browsing activity across websites to deliver more relevant advertising and measure the effectiveness of our marketing campaigns.',
@@ -103,9 +103,9 @@ function CookieSettings() {
     ];
 
     const colorMap: Record<string, { bg: string; text: string; badge: string; toggle: string }> = {
-        emerald: { bg: 'bg-emerald-50', text: 'text-emerald-600', badge: 'bg-emerald-100 text-emerald-700', toggle: 'bg-emerald-500' },
-        sky: { bg: 'bg-sky-50', text: 'text-sky-600', badge: 'bg-sky-100 text-sky-700', toggle: 'bg-sky-500' },
-        violet: { bg: 'bg-violet-50', text: 'text-violet-600', badge: 'bg-violet-100 text-violet-700', toggle: 'bg-violet-500' },
+        lime: { bg: 'bg-lime-50', text: 'text-lime-600', badge: 'bg-lime-100 text-lime-700', toggle: 'bg-lime-500' },
+        green: { bg: 'bg-green-50', text: 'text-green-600', badge: 'bg-green-100 text-green-700', toggle: 'bg-green-500' },
+
         amber: { bg: 'bg-amber-50', text: 'text-amber-600', badge: 'bg-amber-100 text-amber-700', toggle: 'bg-amber-500' },
     };
 
@@ -113,7 +113,7 @@ function CookieSettings() {
         <div className="w-full flex flex-col pb-24">
             <SEO
                 title="Cookie Settings"
-                description="Manage your cookie preferences for the AeroSolar website."
+                description="Manage your cookie preferences for the Sai Gayatri Greentech website."
             />
 
             {/* Hero */}
@@ -121,7 +121,7 @@ function CookieSettings() {
                 <div className="absolute inset-0 opacity-15 bg-[url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&q=80&w=1800')] bg-cover bg-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent" />
                 <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-sm font-bold uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-500/20 border border-lime-500/40 text-lime-300 text-sm font-bold uppercase tracking-widest mb-6">
                         <Cookie size={14} /> Preferences
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
@@ -151,7 +151,7 @@ function CookieSettings() {
                         </button>
                         <button
                             onClick={handleAcceptAll}
-                            className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white rounded-xl text-sm font-bold transition-all shadow-md"
+                            className="px-5 py-2.5 bg-lime-500 hover:bg-lime-400 text-slate-950 rounded-xl text-sm font-bold transition-all shadow-md"
                         >
                             Accept All
                         </button>
@@ -182,7 +182,7 @@ function CookieSettings() {
                                         <p className="text-slate-500 text-sm leading-relaxed">{type.description}</p>
                                         <button
                                             onClick={() => toggleExpand(type.key)}
-                                            className="flex items-center gap-1 text-xs font-bold text-emerald-600 hover:text-emerald-500 transition-colors mt-3"
+                                            className="flex items-center gap-1 text-xs font-bold text-lime-600 hover:text-lime-500 transition-colors mt-3"
                                         >
                                             {isExpanded ? <><ChevronUp size={14} /> Hide details</> : <><ChevronDown size={14} /> View cookies used</>}
                                         </button>
@@ -241,7 +241,7 @@ function CookieSettings() {
                     <button
                         onClick={handleSave}
                         className={`px-8 py-3 rounded-xl font-bold text-sm transition-all shadow-md ${saved
-                            ? 'bg-emerald-500 text-white cursor-default'
+                            ? 'bg-lime-500 text-slate-950 cursor-default'
                             : 'bg-[#0f172a] hover:bg-slate-800 text-white hover:-translate-y-0.5'
                             }`}
                     >
@@ -255,9 +255,9 @@ function CookieSettings() {
 
                 {/* Back Links */}
                 <div className="flex gap-6 text-sm">
-                    <Link to="/" className="text-emerald-600 font-bold hover:underline">← Back to Home</Link>
-                    <Link to="/privacy" className="text-emerald-600 font-bold hover:underline">Privacy Policy →</Link>
-                    <Link to="/terms" className="text-emerald-600 font-bold hover:underline">Terms of Service →</Link>
+                    <Link to="/" className="text-lime-600 font-bold hover:underline">← Back to Home</Link>
+                    <Link to="/privacy" className="text-lime-600 font-bold hover:underline">Privacy Policy →</Link>
+                    <Link to="/terms" className="text-lime-600 font-bold hover:underline">Terms of Service →</Link>
                 </div>
             </div>
         </div>

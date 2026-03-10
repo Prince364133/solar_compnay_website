@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Leaf, Menu, X, Globe } from 'lucide-react';
+import { Leaf, Menu, X, Phone, Mail, ShieldCheck, TrendingUp, Award } from 'lucide-react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -14,6 +14,7 @@ import Projects from './pages/Projects';
 import Careers from './pages/Careers';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
+import Subsidy from './pages/Subsidy';
 import AuditBookingModal from './components/AuditBookingModal';
 import Footer from './components/Footer';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -32,6 +33,7 @@ function AnimatedRoutes() {
                 <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                 <Route path="/team" element={<PageTransition><Team /></PageTransition>} />
                 <Route path="/calculator" element={<PageTransition><Calculator /></PageTransition>} />
+                <Route path="/subsidy" element={<PageTransition><Subsidy /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                 <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
                 <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
@@ -61,99 +63,111 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 function AppContent() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
-    const [language, setLanguage] = useState('EN');
-
-    const toggleLanguage = () => {
-        setLanguage(language === 'EN' ? 'ES' : 'EN');
-    };
 
     const navLinks = [
-        { name: 'Services', path: '/services' },
-        { name: 'Our Impact', path: '/impact' },
-        { name: 'Calculator', path: '/calculator' },
-        { name: 'Team', path: '/team' },
         { name: 'About Us', path: '/about' },
+        { name: 'Solar Solutions', path: '/services' },
+        { name: 'Govt. Subsidies', path: '/subsidy' },
+        { name: 'Pricing & Calculator', path: '/calculator' },
+        { name: 'Gallery', path: '/projects' },
+        { name: 'Contact Us', path: '/contact' },
     ];
 
     return (
         <div className="min-h-screen relative overflow-hidden flex flex-col">
             {/* Abstract Background Orbs */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-400/20 blur-[100px] -z-10" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-sky-400/20 blur-[100px] -z-10" />
+            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-lime-400/20 blur-[100px] -z-10" />
+            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-green-400/15 blur-[100px] -z-10" />
 
             {/* Global Navigation */}
-            <header className="sticky top-0 left-0 w-full z-50 p-4">
-                <nav className="frozen-glass rounded-2xl mx-auto max-w-7xl px-6 py-4">
-                    <div className="flex items-center justify-between">
-                        {/* Logo */}
-                        <Link to="/" className="flex items-center gap-2">
-                            <div className="p-2 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-xl text-white shadow-sm">
-                                <Leaf size={24} />
-                            </div>
-                            <span className="text-xl font-black tracking-tight text-[var(--text-primary)]">AeroSolar</span>
-                        </Link>
-
-                        {/* Desktop Nav */}
-                        <div className="hidden lg:flex items-center gap-8 font-medium text-[var(--text-secondary)]">
-                            {navLinks.map((link) => (
-                                <Link key={link.name} to={link.path} className="hover:text-[var(--accent)] transition-colors text-sm">
-                                    {link.name}
-                                </Link>
-                            ))}
-
-                            {/* Language Toggle */}
-                            <button onClick={toggleLanguage} className="flex items-center gap-1 hover:text-[var(--accent)] transition-colors text-sm bg-white/40 px-3 py-1.5 rounded-full border border-white/60 shadow-sm cursor-pointer">
-                                <Globe size={16} />
-                                <span className="font-bold text-[#0f172a]">{language}</span>
-                            </button>
-
-                            <button onClick={() => setIsAuditModalOpen(true)} className="bg-[var(--accent)] hover:bg-emerald-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-[0_4px_14px_0_rgba(16,185,129,0.39)] hover:shadow-[0_6px_20px_rgba(16,185,129,0.23)] hover:-translate-y-0.5 transform">
-                                Book an Audit
-                            </button>
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <button
-                            className="lg:hidden text-[var(--text-primary)]"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        >
-                            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                        </button>
+            <header className="sticky top-0 left-0 w-full z-50">
+                {/* Header Top Bar */}
+                <div className="hidden lg:flex justify-between items-center px-6 py-2 bg-[#0a1a05] text-white text-[10px] md:text-xs font-medium border-b border-white/5">
+                    <div className="flex gap-6 items-center">
+                        <a href="tel:9848197223" className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-200 group">
+                            <span className="p-1 bg-white/5 rounded-md group-hover:bg-lime-500/20 transition-colors">
+                                <Phone size={12} className="text-lime-400" />
+                            </span>
+                            9848197223 | 9848068223 | 8466847091
+                        </a>
+                        <a href="mailto:saigayatrigreentech@gmail.com" className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-200 group">
+                            <span className="p-1 bg-white/5 rounded-md group-hover:bg-lime-500/20 transition-colors">
+                                <Mail size={12} className="text-lime-400" />
+                            </span>
+                            saigayatrigreentech@gmail.com
+                        </a>
                     </div>
+                    <div className="flex gap-6 items-center">
+                        <div className="flex items-center gap-2 px-3 py-1 bg-lime-500/10 rounded-full border border-lime-500/20">
+                            <Award size={12} className="text-lime-400" />
+                            <span className="text-lime-200">Govt. of India MNRE Approved</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-slate-300">
+                            <ShieldCheck size={14} className="text-lime-400" />
+                            <span>5-Year Warranty on All Products</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-slate-300">
+                            <TrendingUp size={14} className="text-lime-400" />
+                            <span>25%+ Annual Return on Investment</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="p-4">
+                    <nav className="frozen-glass rounded-2xl mx-auto max-w-7xl px-6 py-4">
+                        <div className="flex items-center justify-between">
+                            {/* Logo */}
+                            <Link to="/" className="flex items-center gap-2">
+                                <div className="p-2 bg-gradient-to-br from-lime-400 to-green-600 rounded-xl text-white shadow-sm">
+                                    <Leaf size={24} />
+                                </div>
+                                <span className="text-xl font-black tracking-tight text-[var(--text-primary)]">Sai Gayatri Greentech</span>
+                            </Link>
 
-                    {/* Mobile Nav Dropdown */}
-                    {isMobileMenuOpen && (
-                        <div className="lg:hidden mt-4 pt-4 border-t border-[var(--glass-border)] flex flex-col gap-4 font-medium animate-in slide-in-from-top-4">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors py-2 block"
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                            <button onClick={toggleLanguage} className="flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--accent)] py-2 transition-colors">
-                                <Globe size={20} />
-                                <span>Language: {language === 'EN' ? 'English' : 'Español'}</span>
-                            </button>
-                            <button onClick={() => { setIsAuditModalOpen(true); setIsMobileMenuOpen(false); }} className="mt-2 text-center w-full block w-full bg-[var(--accent)] text-white px-6 py-3 rounded-xl font-bold shadow-lg">
-                                Book an Audit
+                            {/* Desktop Nav */}
+                            <div className="hidden lg:flex items-center gap-8">
+                                {navLinks.map((link) => (
+                                    <Link key={link.name} to={link.path} className="hover:text-[var(--accent)] transition-colors text-sm">
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                className="lg:hidden text-[var(--text-primary)]"
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            >
+                                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                             </button>
                         </div>
-                    )}
-                </nav>
+
+                        {/* Mobile Nav Dropdown */}
+                        {isMobileMenuOpen && (
+                            <div className="lg:hidden mt-4 pt-4 border-t border-[var(--glass-border)] flex flex-col gap-4 font-medium animate-in slide-in-from-top-4">
+                                {navLinks.map((link) => (
+                                    <Link
+                                        key={link.name}
+                                        to={link.path}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors py-2 block"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </nav>
+                </div>
             </header>
 
             {/* Main Content Area */}
-            <main className="flex-grow flex flex-col pt-12">
+            < main className="flex-grow flex flex-col pt-12" >
                 <AnimatedRoutes />
-            </main>
+            </main >
 
             <Footer />
             <AuditBookingModal isOpen={isAuditModalOpen} onClose={() => setIsAuditModalOpen(false)} />
-        </div>
+        </div >
     );
 }
 

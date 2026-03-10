@@ -16,7 +16,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         const root = window.document.documentElement;
         root.classList.remove('light', 'dark');
         root.classList.add(theme);
-        localStorage.setItem('aerosolar-theme', theme);
+        localStorage.setItem('saigayatrigreentech-theme', theme);
     }, [theme]);
 
     const toggleTheme = () => {

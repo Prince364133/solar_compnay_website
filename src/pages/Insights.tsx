@@ -39,7 +39,7 @@ function Insights() {
     return (
         <div className="w-full flex flex-col pt-4 pb-24">
             <SEO
-                title="Insights & Research | AeroSolar"
+                title="Insights & Research | Sai Gayatri Greentech"
                 description="Industry updates, policy analysis, and technological breakthroughs in the commercial renewable energy sector."
             />
 
@@ -47,7 +47,7 @@ function Insights() {
             <section className="relative px-4 md:px-8 max-w-7xl mx-auto pt-16 pb-12 w-full">
                 <div className="text-center mb-12">
                     <h1 className="text-5xl md:text-7xl font-black text-[#0f172a] mb-6 tracking-tight">
-                        Research & <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">Insights</span>
+                        Research & <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-green-500">Insights</span>
                     </h1>
                     <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
                         Deep dives into energy policy, grid infrastructure, and the financial mechanics of the clean transition.
@@ -61,9 +61,9 @@ function Insights() {
                     </div>
                     <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center text-white relative z-10">
                         <div className="flex gap-3 mb-6">
-                            <span className="bg-emerald-500/20 text-emerald-300 px-3 py-1 rounded-full text-xs font-bold tracking-widest border border-emerald-500/30">LATEST RESEARCH</span>
+                            <span className="bg-lime-500/20 text-lime-300 px-3 py-1 rounded-full text-xs font-bold tracking-widest border border-lime-500/30">LATEST RESEARCH</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-black mb-4 group-hover:text-emerald-400 transition-colors">The 2026 Enterprise Guide to Solar ROI</h2>
+                        <h2 className="text-3xl md:text-4xl font-black mb-4 group-hover:text-lime-500 transition-colors">The 2026 Enterprise Guide to Solar ROI</h2>
                         <p className="text-slate-300 leading-relaxed mb-6">We analyzed 500+ commercial installations to determine exactly how quickly Class A real estate can achieve grid parity.</p>
 
                         <div className="flex items-center gap-4 text-sm text-slate-400 font-medium">
@@ -88,8 +88,8 @@ function Insights() {
                                 <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${article.image})` }} />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
-                                <span className="text-xs font-bold text-emerald-600 tracking-wider uppercase mb-3">{article.category}</span>
-                                <h3 className="text-xl font-bold text-[#0f172a] mb-3 group-hover:text-emerald-600 transition-colors">{article.title}</h3>
+                                <span className="text-xs font-bold text-lime-600 tracking-wider uppercase mb-3">{article.category}</span>
+                                <h3 className="text-xl font-bold text-[#0f172a] mb-3 group-hover:text-lime-600 transition-colors">{article.title}</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-1">{article.excerpt}</p>
 
                                 <div className="flex justify-between items-center text-xs font-medium text-slate-400 pt-4 border-t border-slate-100">

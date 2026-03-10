@@ -46,7 +46,7 @@ function PrivacyPolicy() {
             content: [
                 {
                     subtitle: 'We Do Not Sell Your Data',
-                    text: 'AeroSolar Technologies does not sell, rent, or trade your personal information to third parties for their marketing purposes. Period.'
+                    text: 'Sai Gayatri Greentech does not sell, rent, or trade your personal information to third parties for their marketing purposes. Period.'
                 },
                 {
                     subtitle: 'Service Providers',
@@ -110,7 +110,7 @@ function PrivacyPolicy() {
         <div className="w-full flex flex-col pb-24">
             <SEO
                 title="Privacy Policy"
-                description="AeroSolar's Privacy Policy — how we collect, use, and protect your personal information."
+                description="Sai Gayatri Greentech's Privacy Policy — how we collect, use, and protect your personal information."
             />
 
             {/* Hero */}
@@ -118,14 +118,14 @@ function PrivacyPolicy() {
                 <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=1800')] bg-cover bg-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/60 to-transparent" />
                 <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm font-bold uppercase tracking-widest mb-6">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-500/20 border border-lime-500/40 text-lime-300 text-sm font-bold uppercase tracking-widest mb-6">
                         <Shield size={14} /> Legal
                     </div>
                     <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
                         Privacy Policy
                     </h1>
                     <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-                        We take your privacy seriously. This policy describes how AeroSolar Technologies collects, uses, and protects your personal information.
+                        We take your privacy seriously. This policy describes how Sai Gayatri Greentech collects, uses, and protects your personal information.
                     </p>
                     <p className="text-slate-400 text-sm mt-6">
                         Last updated: March 1, 2026 · Effective Date: March 1, 2026
@@ -137,12 +137,12 @@ function PrivacyPolicy() {
             <div className="max-w-4xl mx-auto w-full px-6 py-16 flex flex-col gap-12">
 
                 {/* Intro Banner */}
-                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 flex gap-4">
-                    <AlertCircle className="text-emerald-600 shrink-0 mt-0.5" size={20} />
+                <div className="bg-lime-50 border border-lime-200 rounded-2xl p-6 flex gap-4">
+                    <AlertCircle className="text-lime-600 shrink-0 mt-0.5" size={20} />
                     <div>
                         <p className="font-bold text-[#0f172a] mb-1">Our Commitment</p>
                         <p className="text-slate-600 text-sm leading-relaxed">
-                            AeroSolar is committed to protecting your privacy. We collect only what we need, use it only for the purposes described here, and never sell your personal data to third parties. This policy applies to all services provided by AeroSolar Technologies, Inc., including our website, mobile applications, and enterprise solutions.
+                            Sai Gayatri Greentech is committed to protecting your privacy. We collect only what we need, use it only for the purposes described here, and never sell your personal data to third parties. This policy applies to all services provided by Sai Gayatri Greentech, including our website, mobile applications, and enterprise solutions.
                         </p>
                     </div>
                 </div>
@@ -151,7 +151,7 @@ function PrivacyPolicy() {
                 {sections.map((section, i) => (
                     <section key={i} className="bg-white/70 rounded-3xl border border-white/80 shadow-sm p-8">
                         <div className="flex items-center gap-4 mb-6">
-                            <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center">
+                            <div className="w-12 h-12 bg-lime-100 text-lime-600 rounded-2xl flex items-center justify-center">
                                 {section.icon}
                             </div>
                             <h2 className="text-2xl font-black text-[#0f172a]">{section.title}</h2>
@@ -172,21 +172,21 @@ function PrivacyPolicy() {
                     <h2 className="text-2xl font-black mb-4">Contact Our Privacy Team</h2>
                     <p className="text-slate-300 mb-6 text-sm">To exercise your rights or raise concerns about how we handle your data, contact our Data Protection Officer:</p>
                     <div className="flex flex-col sm:flex-row gap-6">
-                        <a href="mailto:privacy@aerosolar.com" className="flex items-center gap-3 text-emerald-400 hover:text-emerald-300 transition-colors">
-                            <Mail size={18} /> privacy@aerosolar.com
+                        <a href="mailto:saigayatrigreentech@gmail.com" className="flex items-center gap-3 text-lime-400 hover:text-lime-300 transition-colors">
+                            <Mail size={18} /> saigayatrigreentech@gmail.com
                         </a>
-                        <a href="tel:+18005550100" className="flex items-center gap-3 text-emerald-400 hover:text-emerald-300 transition-colors">
-                            <Phone size={18} /> +1 (800) 555-0100
+                        <a href="tel:+919848197223" className="flex items-center gap-3 text-lime-400 hover:text-lime-300 transition-colors">
+                            <Phone size={18} /> +91 98481 97223
                         </a>
                     </div>
-                    <p className="text-slate-400 text-xs mt-6">AeroSolar Technologies, Inc. · 150 California Street, Suite 800, San Francisco, CA 94111</p>
+                    <p className="text-slate-400 text-xs mt-6">Sai Gayatri Greentech · 150 California Street, Suite 800, San Francisco, CA 94111</p>
                 </section>
 
                 {/* Back Links */}
                 <div className="flex gap-6 text-sm">
-                    <Link to="/" className="text-emerald-600 font-bold hover:underline">← Back to Home</Link>
-                    <Link to="/terms" className="text-emerald-600 font-bold hover:underline">Terms of Service →</Link>
-                    <Link to="/cookies" className="text-emerald-600 font-bold hover:underline">Cookie Settings →</Link>
+                    <Link to="/" className="text-lime-600 font-bold hover:underline">← Back to Home</Link>
+                    <Link to="/terms" className="text-lime-600 font-bold hover:underline">Terms of Service →</Link>
+                    <Link to="/cookies" className="text-lime-600 font-bold hover:underline">Cookie Settings →</Link>
                 </div>
             </div>
         </div>

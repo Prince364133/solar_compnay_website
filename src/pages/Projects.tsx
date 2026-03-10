@@ -7,43 +7,43 @@ import { Link } from 'react-router-dom';
 const projects = [
     {
         id: '1',
-        title: 'Project Genesis',
-        client: 'Global Datacenter Corp',
-        location: 'Nevada Desert, USA',
-        size: '120 MW',
-        type: 'Utility-Scale Solar + Storage',
+        title: 'Industrial Solar Hub',
+        client: 'Hyderabad Manufacturing Units',
+        location: 'Cherlapally, Hyderabad',
+        size: '1.2 MW',
+        type: 'Rooftop Solar Array',
         image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80',
-        metrics: { co2: '85k Tons', homes: '22,000' }
+        metrics: { co2: '1,500 Tons', homes: '450' }
     },
     {
         id: '2',
-        title: 'Skyline Factory',
-        client: 'Automotive Innovations',
-        location: 'Munich, Germany',
-        size: '14 MW',
-        type: 'Rooftop Micro-Grid',
+        title: 'Residential Green Park',
+        client: 'Housing Society Association',
+        location: 'Pragati Nagar, Hyderabad',
+        size: '250 KW',
+        type: 'Community Rooftop',
         image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80',
-        metrics: { co2: '12k Tons', homes: '3,000' }
+        metrics: { co2: '320 Tons', homes: '80' }
     },
     {
         id: '3',
-        title: 'Desert Oasis',
-        client: 'National Water Authority',
-        location: 'Dubai, UAE',
-        size: '650 MW',
-        type: 'Floating Solar Array',
+        title: 'Agricultural Power Unit',
+        client: 'Regional Farmer Cooperative',
+        location: 'Medak District, Telangana',
+        size: '500 KW',
+        type: 'Solar Irrigation System',
         image: 'https://images.unsplash.com/photo-1536643209532-35dbf1aedc1e?auto=format&fit=crop&q=80',
-        metrics: { co2: '450k Tons', homes: '120,000' }
+        metrics: { co2: '650 Tons', homes: 'N/A' }
     },
     {
         id: '4',
-        title: 'Campus Zero',
-        client: 'Tech Giant Univ',
-        location: 'California, USA',
-        size: '8 MW',
-        type: 'Architectural Canopies',
+        title: 'Institutional Brightness',
+        client: 'Educational Trust',
+        location: 'Kukatpally, Hyderabad',
+        size: '150 KW',
+        type: 'On-Grid Solar System',
         image: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80',
-        metrics: { co2: '6k Tons', homes: '1,500' }
+        metrics: { co2: '200 Tons', homes: '50' }
     }
 ];
 
@@ -53,18 +53,18 @@ function Projects() {
     return (
         <div className="w-full flex flex-col pt-4 pb-24">
             <SEO
-                title="Case Studies & Portfolio | AeroSolar"
+                title="Case Studies & Portfolio | Sai Gayatri Greentech"
                 description="Explore massive enterprise solar installments and utility-scale green energy projects deployed globally."
             />
 
             {/* HERO */}
             <section className="relative px-4 md:px-8 max-w-7xl mx-auto pt-16 pb-12 w-full text-center">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-emerald-500/10 blur-[100px] rounded-full -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-lime-500/10 blur-[100px] rounded-full -z-10" />
                 <h1 className="text-5xl md:text-7xl font-black text-[#0f172a] mb-6 tracking-tight">
-                    Proof of <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Power</span>
+                    Proof of <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-green-500">Power</span>
                 </h1>
                 <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
-                    We don't just design theoretical systems. We build massive, grid-altering infrastructure. Explore our most complex enterprise deployments.
+                    We don't just design theoretical systems. We build high-performance, efficient solar infrastructure across Telangana and Andhra Pradesh. Explore our successful deployments.
                 </p>
 
                 {/* Filters */}
@@ -102,7 +102,7 @@ function Projects() {
                                 </div>
 
                                 <div className="absolute bottom-4 left-6 right-6">
-                                    <p className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">{project.type}</p>
+                                    <p className="text-lime-400 text-xs font-bold uppercase tracking-widest mb-1">{project.type}</p>
                                     <h3 className="text-2xl font-black text-white">{project.title}</h3>
                                 </div>
                             </div>
@@ -118,18 +118,18 @@ function Projects() {
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4 mb-6">
-                                    <div className="bg-emerald-50 border border-emerald-100 p-4 rounded-2xl">
-                                        <p className="text-xs font-bold text-emerald-600 uppercase mb-1">CO₂ Offset/Yr</p>
+                                    <div className="bg-lime-50 border border-lime-100 p-4 rounded-2xl">
+                                        <p className="text-xs font-bold text-lime-600 uppercase mb-1">CO₂ Offset/Yr</p>
                                         <p className="text-xl font-black text-[#0f172a]">{project.metrics.co2}</p>
                                     </div>
-                                    <div className="bg-sky-50 border border-sky-100 p-4 rounded-2xl">
-                                        <p className="text-xs font-bold text-sky-600 uppercase mb-1">Homes Powered</p>
+                                    <div className="bg-green-50 border border-green-100 p-4 rounded-2xl">
+                                        <p className="text-xs font-bold text-green-600 uppercase mb-1">Homes Powered</p>
                                         <p className="text-xl font-black text-[#0f172a]">{project.metrics.homes}</p>
                                     </div>
                                 </div>
 
                                 <Link to={`/projects/${project.id}`} className="block w-full">
-                                    <button className="w-full py-4 bg-slate-900 hover:bg-emerald-600 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button className="w-full py-4 bg-slate-900 hover:bg-lime-600 text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         View Case Study <ArrowRight size={18} />
                                     </button>
                                 </Link>

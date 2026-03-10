@@ -17,13 +17,13 @@ function AnimatedSphere() {
         <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
             <Sphere ref={sphereRef} args={[1.5, 64, 64]}>
                 <MeshDistortMaterial
-                    color="#10b981"
+                    color="#84cc16"
                     attach="material"
                     distort={0.4}
                     speed={2}
                     roughness={0.2}
                     metalness={0.8}
-                    emissive="#064e3b"
+                    emissive="#1a2e05"
                     emissiveIntensity={0.5}
                 />
             </Sphere>
@@ -43,7 +43,7 @@ function WireframeGlobe() {
     return (
         <Sphere ref={globeRef} args={[2.2, 32, 32]}>
             <meshStandardMaterial
-                color="#34d399"
+                color="#a3e635"
                 wireframe
                 transparent
                 opacity={0.15}
@@ -57,8 +57,8 @@ export default function ThreeDHero() {
         <div className="absolute inset-0 w-full h-full -z-0 pointer-events-none opacity-60">
             <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
                 <ambientLight intensity={0.5} />
-                <directionalLight position={[10, 10, 5]} intensity={1.5} color="#10b981" />
-                <pointLight position={[-10, -10, -10]} intensity={1} color="#0284c7" />
+                <directionalLight position={[10, 10, 5]} intensity={1.5} color="#84cc16" />
+                <pointLight position={[-10, -10, -10]} intensity={1} color="#4d7c0f" />
 
                 <AnimatedSphere />
                 <WireframeGlobe />
@@ -69,7 +69,7 @@ export default function ThreeDHero() {
                     size={2}
                     speed={0.4}
                     opacity={0.3}
-                    color="#34d399"
+                    color="#a3e635"
                 />
 
                 {/* OrbitControls disabled for zoom so it doesn't mess with native scroll, but autoRotate adds a nice global spin */}

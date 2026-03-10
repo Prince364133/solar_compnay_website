@@ -54,11 +54,11 @@ function Impact() {
     useEffect(() => {
         // Terminal log generation
         const interval = setInterval(() => {
-            const locs = ['Tokyo', 'Berlin', 'New York', 'Sydney', 'Mumbai'];
+            const locs = ['Hyderabad', 'Secunderabad', 'Vijayawada', 'Vizag', 'Bangalore'];
             const loc = locs[Math.floor(Math.random() * locs.length)];
             const power = (Math.random() * 5 + 1).toFixed(2);
             setTerminalLines(prev => {
-                const newLines = [...prev, `> [${new Date().toISOString().split('T')[1].split('.')[0]}] Node ${loc} streaming +${power} MWh to grid.`];
+                const newLines = [...prev, `> [${new Date().toISOString().split('T')[1].split('.')[0]}] Node ${loc} streaming +${power} KW to grid.`];
                 return newLines.slice(-6); // Keep last 6
             });
         }, 4000);
@@ -67,7 +67,7 @@ function Impact() {
 
     // ─── MOCK DATA ──────────────────────────────────────────────────────────────
     const testimonials = [
-        { id: 1, quote: "Since partnering with AeroSolar, our manufacturing campus runs 100% on clean energy. It's transformed our sustainability reporting entirely.", author: "Sarah Jenkins, VP of Ops", company: "Global Motors" },
+        { id: 1, quote: "Since partnering with Sai Gayatri Greentech, our manufacturing campus runs 100% on clean energy. It's transformed our sustainability reporting entirely.", author: "Sarah Jenkins, VP of Ops", company: "Global Motors" },
         { id: 2, quote: "The community micro-grid saved our hospital during the blackout. Clean, resilient power when we needed it most.", author: "Dr. Alistair Vance", company: "Mercy General Hospital" },
         { id: 3, quote: "Not only have we cut utility costs by 60%, but our brand loyalty reached an all-time high by becoming carbon negative.", author: "Elena Rodriguez, CEO", company: "Verde Retail Corp" }
     ];
@@ -85,27 +85,27 @@ function Impact() {
         <div className="w-full flex flex-col pt-4">
             <SEO
                 title="Our Global Impact"
-                description="Track AeroSolar's real-time environmental impact, CO2 offsets, and global installations."
+                description="Track Sai Gayatri Greentech's real-time environmental impact, CO2 offsets, and global installations."
             />
             {/* 1. HERO WITH VIDEO BACKGROUND (Simulated) */}
             <section className="relative w-full min-h-[85vh] flex items-center justify-center p-6 overflow-hidden">
-                <div className="absolute inset-0 bg-slate-900">
+                <div className="absolute inset-0 bg-[#0a1a05]">
                     <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[url('https://images.unsplash.com/photo-1540103711724-1536424e1074?auto=format&fit=crop&q=80')] bg-cover bg-center animate-pulse duration-10000"></div>
                 </div>
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lime-500/20 blur-[120px] rounded-full pointer-events-none"></div>
 
                 <div className="relative z-10 max-w-5xl mx-auto text-center space-y-8 animate-in slide-in-from-bottom-5 duration-700">
-                    <div className="inline-flex py-1.5 px-4 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 font-bold text-xs uppercase tracking-widest rounded-full backdrop-blur-md">
+                    <div className="inline-flex py-1.5 px-4 bg-lime-500/20 border border-lime-400/30 text-lime-300 font-bold text-xs uppercase tracking-widest rounded-full backdrop-blur-md">
                         2026 Impact Report
                     </div>
                     <h1 className="text-5xl md:text-7xl font-black text-white px-4 leading-tight">
-                        Powering a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">Regenerative</span> Future.
+                        Powering a <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-green-300">Regenerative</span> Future.
                     </h1>
                     <p className="text-slate-300 text-xl max-w-2xl mx-auto leading-relaxed">
-                        We don't just generate energy. We rebuild ecosystems, empower communities, and reverse climate acceleration. See our real-world impact below.
+                        We don't just generate energy. We empower local businesses, homes, and farms in Hyderabad and beyond with sustainable, reliable solar power.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                        <button className="bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+                        <button className="bg-lime-500 hover:bg-lime-400 text-[#1a2e05] font-black px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(163,230,53,0.5)]">
                             Explore the Data
                         </button>
                     </div>
@@ -118,18 +118,18 @@ function Impact() {
                 <section className="relative z-20 -mt-36">
                     <div className="frozen-glass rounded-3xl p-8 border border-white/40 shadow-2xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/20">
                         <div className="p-4 transform hover:scale-105 transition-transform duration-300">
-                            <Zap size={32} className="mx-auto text-amber-500 mb-3" />
-                            <p className="text-4xl lg:text-5xl font-black text-[#0f172a] tabular-nums font-mono">{mwhGenerated.toLocaleString()}</p>
+                            <Zap size={32} className="mx-auto text-lime-500 mb-3" />
+                            <p className="text-4xl lg:text-5xl font-black text-[#1a2e05] tabular-nums font-mono">{mwhGenerated.toLocaleString()}</p>
                             <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mt-2">MWh Clean Energy Generated</p>
                         </div>
                         <div className="p-4 transform hover:scale-105 transition-transform duration-300">
-                            <Leaf size={32} className="mx-auto text-emerald-500 mb-3" />
-                            <p className="text-4xl lg:text-5xl font-black text-[#0f172a] tabular-nums font-mono">{co2Saved.toLocaleString()}</p>
+                            <Leaf size={32} className="mx-auto text-green-500 mb-3" />
+                            <p className="text-4xl lg:text-5xl font-black text-[#1a2e05] tabular-nums font-mono">{co2Saved.toLocaleString()}</p>
                             <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mt-2">Tons CO₂ Prevented</p>
                         </div>
                         <div className="p-4 transform hover:scale-105 transition-transform duration-300">
-                            <Users size={32} className="mx-auto text-sky-500 mb-3" />
-                            <p className="text-4xl lg:text-5xl font-black text-[#0f172a] tabular-nums font-mono">152,490</p>
+                            <Users size={32} className="mx-auto text-lime-600 mb-3" />
+                            <p className="text-4xl lg:text-5xl font-black text-[#1a2e05] tabular-nums font-mono">152,490</p>
                             <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mt-2">Homes Powered Annually</p>
                         </div>
                     </div>
@@ -144,8 +144,8 @@ function Impact() {
                     <div className="flex justify-center mb-10">
                         <div className="bg-slate-200 p-1.5 rounded-2xl flex relative w-64 shadow-inner">
                             <div className={`absolute top-1.5 bottom-1.5 w-[calc(50%-6px)] bg-white rounded-xl shadow-md transition-all duration-500 ${viewMode === 'problem' ? 'left-1.5' : 'left-[calc(50%+1.5px)]'}`}></div>
-                            <button onClick={() => setViewMode('problem')} className={`flex-1 py-2.5 text-sm font-bold relative z-10 transition-colors ${viewMode === 'problem' ? 'text-rose-600' : 'text-slate-500 hover:text-slate-700'}`}>The Past</button>
-                            <button onClick={() => setViewMode('solution')} className={`flex-1 py-2.5 text-sm font-bold relative z-10 transition-colors ${viewMode === 'solution' ? 'text-emerald-600' : 'text-slate-500 hover:text-slate-700'}`}>The Future</button>
+                            <button onClick={() => setViewMode('problem')} className={`flex-1 py-2.5 text-sm font-bold relative z-10 transition-colors ${viewMode === 'problem' ? 'text-red-500' : 'text-slate-500 hover:text-slate-700'}`}>The Past</button>
+                            <button onClick={() => setViewMode('solution')} className={`flex-1 py-2.5 text-sm font-bold relative z-10 transition-colors ${viewMode === 'solution' ? 'text-lime-600' : 'text-slate-500 hover:text-slate-700'}`}>The Future</button>
                         </div>
                     </div>
 
@@ -153,55 +153,55 @@ function Impact() {
                         <div className={`absolute inset-0 bg-slate-900 transition-opacity duration-1000 ${viewMode === 'problem' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-luminosity"></div>
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-black/50">
-                                <Factory size={64} className="text-rose-500 mb-6 drop-shadow-[0_0_15px_rgba(244,63,94,0.5)]" />
+                                <Factory size={64} className="text-red-500 mb-6 drop-shadow-[0_0_15px_rgba(239,68,68,0.5)]" />
                                 <h3 className="text-3xl font-black text-white mb-4">Fossil Fuel Grid</h3>
-                                <p className="text-rose-200 max-w-md mx-auto">Centralized, fragile, polluting. Emits 0.85 lbs of CO2 per kWh. Causes respiratory illness and climate volatility.</p>
+                                <p className="text-red-200 max-w-md mx-auto">Centralized, fragile, polluting. Emits 0.85 lbs of CO2 per kWh. Causes respiratory illness and climate volatility.</p>
                             </div>
                         </div>
 
-                        <div className={`absolute inset-0 bg-emerald-900 transition-opacity duration-1000 ${viewMode === 'solution' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+                        <div className={`absolute inset-0 bg-[#0a1a05] transition-opacity duration-1000 ${viewMode === 'solution' ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
                             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-emerald-900/60">
-                                <Sun size={64} className="text-amber-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.6)] animate-[spin_10s_linear_infinite]" />
-                                <h3 className="text-3xl font-black text-white mb-4">AeroSolar Micro-Grid</h3>
-                                <p className="text-emerald-100 max-w-md mx-auto">Decentralized, resilient, zero-emission. Generates endless local power while sequestering corporate carbon footprints.</p>
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-[#0a1a05]/60">
+                                <Sun size={64} className="text-lime-400 mb-6 drop-shadow-[0_0_15px_rgba(163,230,53,0.6)] animate-[spin_10s_linear_infinite]" />
+                                <h3 className="text-3xl font-black text-white mb-4">Sai Gayatri Greentech Micro-Grid</h3>
+                                <p className="text-lime-100 max-w-md mx-auto">Decentralized, resilient, zero-emission. Generates endless local power while sequestering corporate carbon footprints.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 4. VISUALIZER SLIDER (What a difference makes) */}
-                <section className="bg-emerald-50 rounded-3xl p-8 md:p-12 border border-emerald-100 relative overflow-hidden">
-                    <div className="absolute -right-20 -top-20 text-emerald-500/10"><Leaf size={300} /></div>
+                <section className="bg-lime-50 rounded-3xl p-8 md:p-12 border border-lime-100 relative overflow-hidden">
+                    <div className="absolute -right-20 -top-20 text-lime-500/10"><Leaf size={300} /></div>
                     <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <h2 className="text-3xl font-black text-[#0f172a] mb-6">Scale the Impact</h2>
-                            <p className="text-emerald-800 font-medium mb-10">Use the slider to see how solar capacity translates to tangible, everyday environmental milestones.</p>
+                            <h2 className="text-3xl font-black text-[#1a2e05] mb-6">Scale the Impact</h2>
+                            <p className="text-lime-800 font-medium mb-10">Use the slider to see how solar capacity translates to tangible, everyday environmental milestones.</p>
 
                             <div className="space-y-4">
-                                <div className="flex justify-between font-bold text-emerald-900">
-                                    <span>Offset: <span className="text-xl font-black text-emerald-600">{visualizerTons} Tons CO₂</span></span>
+                                <div className="flex justify-between font-bold text-lime-900">
+                                    <span>Offset: <span className="text-xl font-black text-lime-600">{visualizerTons} Tons CO₂</span></span>
                                 </div>
                                 <input
                                     type="range" min="1" max="1000" step="1" value={visualizerTons}
                                     onChange={(e) => setVisualizerTons(Number(e.target.value))}
-                                    className="w-full h-3 bg-emerald-200 rounded-full appearance-none accent-emerald-600 cursor-pointer"
+                                    className="w-full h-3 bg-lime-200 rounded-full appearance-none accent-lime-600 cursor-pointer"
                                 />
-                                <div className="flex justify-between text-xs font-bold text-emerald-600/70">
+                                <div className="flex justify-between text-xs font-bold text-lime-600/70">
                                     <span>1 Ton</span><span>1,000 Tons</span>
                                 </div>
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 text-center transform transition-all hover:-translate-y-1">
-                                <Trees size={32} className="text-teal-500 mx-auto mb-3" />
-                                <p className="text-3xl font-black text-[#0f172a]">{(visualizerTons * 45).toLocaleString()}</p>
-                                <p className="text-xs font-bold text-emerald-600 tracking-wider uppercase mt-1">Trees Planted</p>
+                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-lime-50 text-center transform transition-all hover:-translate-y-1">
+                                <Trees size={32} className="text-green-500 mx-auto mb-3" />
+                                <p className="text-3xl font-black text-[#1a2e05]">{(visualizerTons * 45).toLocaleString()}</p>
+                                <p className="text-xs font-bold text-lime-600 tracking-wider uppercase mt-1">Trees Planted</p>
                             </div>
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-emerald-50 text-center transform transition-all hover:-translate-y-1">
-                                <Car size={32} className="text-blue-500 mx-auto mb-3" />
-                                <p className="text-3xl font-black text-[#0f172a]">{(Math.floor(visualizerTons / 4.6)).toLocaleString()}</p>
-                                <p className="text-xs font-bold text-sky-600 tracking-wider uppercase mt-1">Cars Taken Off Road</p>
+                            <div className="bg-white p-6 rounded-2xl shadow-sm border border-lime-50 text-center transform transition-all hover:-translate-y-1">
+                                <Car size={32} className="text-lime-600 mx-auto mb-3" />
+                                <p className="text-3xl font-black text-[#1a2e05]">{(Math.floor(visualizerTons / 4.6)).toLocaleString()}</p>
+                                <p className="text-xs font-bold text-lime-600 tracking-wider uppercase mt-1">Cars Taken Off Road</p>
                             </div>
                         </div>
                     </div>
@@ -213,19 +213,19 @@ function Impact() {
                         <h2 className="text-3xl font-black text-[#0f172a] mb-4">Global Deployment</h2>
                         <p className="text-[var(--text-secondary)]">Hover over key hubs to see live installation capacity.</p>
                     </div>
-                    <div className="frozen-glass rounded-3xl p-6 border border-white/60 shadow-xl overflow-hidden relative min-h-[400px] flex items-center justify-center bg-slate-50">
+                    <div className="frozen-glass rounded-3xl p-6 border border-white/60 shadow-xl overflow-hidden relative min-h-[400px] flex items-center justify-center bg-lime-500/5">
                         {/* Mock Map Background */}
                         <div className="absolute inset-0 opacity-20 bg-[url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg')] bg-center bg-contain bg-no-repeat m-10"></div>
 
                         {/* Map Dots */}
                         <div className="relative w-full h-full max-w-[800px] aspect-[2/1] z-10">
                             {[
-                                { id: 'NA', top: '30%', left: '20%', label: 'North America', cap: '1.2 GW' },
-                                { id: 'SA', top: '65%', left: '30%', label: 'South America', cap: '350 MW' },
-                                { id: 'EU', top: '25%', left: '50%', label: 'Europe', cap: '980 MW' },
-                                { id: 'AF', top: '55%', left: '55%', label: 'Africa', cap: '850 MW (Core Growth)' },
-                                { id: 'AS', top: '40%', left: '75%', label: 'Asia Pacific', cap: '2.1 GW' },
-                                { id: 'AU', top: '75%', left: '85%', label: 'Australia', cap: '420 MW' },
+                                { id: 'HYD', top: '40%', left: '45%', label: 'Hyderabad (HQ)', cap: '450 MW' },
+                                { id: 'VZG', top: '45%', left: '60%', label: 'Visakhapatnam', cap: '120 MW' },
+                                { id: 'VJW', top: '50%', left: '55%', label: 'Vijayawada', cap: '85 MW' },
+                                { id: 'BLR', top: '65%', left: '48%', label: 'Bangalore', cap: '210 MW' },
+                                { id: 'MAS', top: '70%', left: '52%', label: 'Chennai', cap: '95 MW' },
+                                { id: 'TRP', top: '60%', left: '50%', label: 'Tirupati', cap: '45 MW' },
                             ].map(region => (
                                 <div key={region.id}
                                     className="absolute w-6 h-6 -ml-3 -mt-3 flex items-center justify-center cursor-pointer group"
@@ -233,14 +233,14 @@ function Impact() {
                                     onMouseEnter={() => setHoveredRegion(region.label)}
                                     onMouseLeave={() => setHoveredRegion(null)}
                                 >
-                                    <div className="absolute w-full h-full bg-emerald-500 rounded-full animate-ping opacity-40"></div>
-                                    <div className="w-3 h-3 bg-emerald-600 rounded-full shadow-lg z-10"></div>
+                                    <div className="absolute w-full h-full bg-lime-500 rounded-full animate-ping opacity-40"></div>
+                                    <div className="w-3 h-3 bg-lime-600 rounded-full shadow-lg z-10"></div>
 
                                     {/* Tooltip */}
-                                    <div className={`absolute bottom-full mb-3 bg-slate-800 text-white rounded-xl p-3 shadow-xl transition-all duration-300 w-48 text-center pointer-events-none origin-bottom ${hoveredRegion === region.label ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                                    <div className={`absolute bottom-full mb-3 bg-[#1a2e05] text-white rounded-xl p-3 shadow-xl transition-all duration-300 w-48 text-center pointer-events-none origin-bottom ${hoveredRegion === region.label ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
                                         <p className="font-black text-sm">{region.label}</p>
-                                        <p className="text-emerald-400 font-bold text-xs mt-1">Installed: {region.cap}</p>
-                                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-slate-800"></div>
+                                        <p className="text-lime-400 font-bold text-xs mt-1">Installed: {region.cap}</p>
+                                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-[#1a2e05]"></div>
                                     </div>
                                 </div>
                             ))}
@@ -255,7 +255,7 @@ function Impact() {
                             <h2 className="text-3xl font-black text-[#0f172a] mb-4">Aligned with UN SDGs</h2>
                             <p className="text-[var(--text-secondary)]">We map every corporate initiative to the United Nations Sustainable Development Goals. Click a card to reveal how we tackle it.</p>
                         </div>
-                        <div className="bg-blue-50 text-blue-800 px-5 py-2.5 rounded-full font-bold text-sm border border-blue-200 shadow-sm flex items-center gap-2 w-max">
+                        <div className="bg-lime-50 text-lime-800 px-5 py-2.5 rounded-full font-bold text-sm border border-lime-200 shadow-sm flex items-center gap-2 w-max">
                             <Globe size={18} /> United Nations Global Compact Member
                         </div>
                     </div>
@@ -267,18 +267,18 @@ function Impact() {
                                 onClick={() => setFlippedCard(flippedCard === sdg.id ? null : sdg.id)}>
                                 <div className={`w-full h-full relative preserve-3d transition-transform duration-700 ${flippedCard === sdg.id ? 'rotate-y-180' : ''}`}>
                                     {/* Front */}
-                                    <div className="absolute inset-0 backface-hidden bg-white border border-slate-200 rounded-2xl p-6 shadow-md flex flex-col items-center justify-center text-center hover:border-emerald-300 hover:shadow-lg transition-all">
-                                        <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-emerald-600 mb-4 shadow-inner">
+                                    <div className="absolute inset-0 backface-hidden bg-white border border-slate-200 rounded-2xl p-6 shadow-md flex flex-col items-center justify-center text-center hover:border-lime-300 hover:shadow-lg transition-all">
+                                        <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center text-lime-600 mb-4 shadow-inner">
                                             {sdg.icon}
                                         </div>
                                         <div className="inline-block px-3 py-1 bg-slate-100 text-slate-500 font-black text-[10px] uppercase tracking-widest rounded-full mb-3">Goal {sdg.num}</div>
-                                        <h3 className="font-bold text-[#0f172a] text-lg">{sdg.title}</h3>
-                                        <p className="text-xs text-sky-600 font-bold mt-4 uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">Tap to reveal <ArrowRight size={12} /></p>
+                                        <h3 className="font-bold text-[#1a2e05] text-lg">{sdg.title}</h3>
+                                        <p className="text-xs text-lime-600 font-bold mt-4 uppercase flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">Tap to reveal <ArrowRight size={12} /></p>
                                     </div>
                                     {/* Back */}
-                                    <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-emerald-600 to-teal-800 rounded-2xl p-6 shadow-xl text-white flex flex-col justify-center text-center">
+                                    <div className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-lime-600 to-green-800 rounded-2xl p-6 shadow-xl text-white flex flex-col justify-center text-center">
                                         <h4 className="font-black text-xl mb-3 border-b border-white/20 pb-3">{sdg.title}</h4>
-                                        <p className="text-emerald-50 text-sm leading-relaxed">{sdg.desc}</p>
+                                        <p className="text-lime-50 text-sm leading-relaxed">{sdg.desc}</p>
                                     </div>
                                 </div>
                             </div>
@@ -287,10 +287,10 @@ function Impact() {
                 </section>
 
                 {/* 7. COMMUNITY STORIES CAROUSEL */}
-                <section className="bg-[#0f172a] rounded-3xl p-8 md:p-16 text-white overflow-hidden relative">
+                <section className="bg-[#0a1a05] rounded-3xl p-8 md:p-16 text-white overflow-hidden relative">
                     <div className="absolute top-0 right-0 p-8 text-white/5 pointer-events-none"><Anchor size={250} /></div>
 
-                    <h2 className="text-3xl font-black mb-10 relative z-10 text-emerald-400">Community Voices</h2>
+                    <h2 className="text-3xl font-black mb-10 relative z-10 text-lime-400">Community Voices</h2>
 
                     <div className="relative z-10 max-w-4xl mx-auto">
                         <div className="min-h-[200px] flex items-center justify-center text-center px-4">
@@ -299,8 +299,8 @@ function Impact() {
                             </p>
                         </div>
                         <div className="mt-8 text-center" key={`author-${currentTestimonial}`}>
-                            <p className="font-black text-lg text-emerald-400">{testimonials[currentTestimonial].author}</p>
-                            <p className="text-slate-400 text-sm font-bold tracking-widest uppercase mt-1">{testimonials[currentTestimonial].company}</p>
+                            <p className="font-black text-lg text-lime-400">{testimonials[currentTestimonial].author}</p>
+                            <p className="text-lime-100/60 text-sm font-bold tracking-widest uppercase mt-1">{testimonials[currentTestimonial].company}</p>
                         </div>
 
                         <div className="flex justify-center gap-4 mt-12">
@@ -314,7 +314,7 @@ function Impact() {
                                     <button
                                         key={i}
                                         onClick={() => setCurrentTestimonial(i)}
-                                        className={`w-3 h-3 rounded-full transition-all ${i === currentTestimonial ? 'bg-emerald-500 scale-125' : 'bg-white/20 hover:bg-white/40'}`}
+                                        className={`w-3 h-3 rounded-full transition-all ${i === currentTestimonial ? 'bg-lime-500 scale-125' : 'bg-white/20 hover:bg-white/40'}`}
                                     />
                                 ))}
                             </div>
@@ -330,35 +330,35 @@ function Impact() {
                 {/* 8. MINI CALCULATOR IMPACT PEEK */}
                 <section className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <div className="inline-flex py-1 px-3 bg-sky-100 text-sky-700 font-bold text-xs uppercase tracking-widest rounded-full mb-4">Enterprise Impact</div>
+                        <div className="inline-flex py-1 px-3 bg-lime-100 text-lime-700 font-bold text-xs uppercase tracking-widest rounded-full mb-4">Enterprise Impact</div>
                         <h2 className="text-3xl font-black text-[#0f172a] mb-6">Quantify Your Potential</h2>
                         <p className="text-[var(--text-secondary)] mb-8">
                             Every facility has an idle roof or parking lot. See what transforming that space means for your corporate ESG goals instantly.
                         </p>
                         <ul className="space-y-4 font-medium text-slate-600 mb-8">
-                            <li className="flex items-center gap-3"><CheckCircle2 className="text-emerald-500" size={20} /> Reduce Scope 2 emissions immediately</li>
-                            <li className="flex items-center gap-3"><CheckCircle2 className="text-emerald-500" size={20} /> Protect against utility rate hikes</li>
-                            <li className="flex items-center gap-3"><CheckCircle2 className="text-emerald-500" size={20} /> Improve property valuation</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="text-lime-500" size={20} /> Reduce Scope 2 emissions immediately</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="text-lime-500" size={20} /> Protect against utility rate hikes</li>
+                            <li className="flex items-center gap-3"><CheckCircle2 className="text-lime-500" size={20} /> Improve property valuation</li>
                         </ul>
                     </div>
-                    <div className="frozen-glass rounded-3xl p-8 border border-white/60 shadow-xl bg-gradient-to-br from-white/80 to-sky-50/50">
-                        <h4 className="font-black text-center mb-6 text-slate-800">Quick Estimate: Office Building</h4>
+                    <div className="frozen-glass rounded-3xl p-8 border border-white/60 shadow-xl bg-gradient-to-br from-white/80 to-lime-50/50">
+                        <h4 className="font-black text-center mb-6 text-[#1a2e05]">Quick Estimate: Office Building</h4>
                         <div className="space-y-6">
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-slate-100 flex justify-between items-center">
                                 <span className="font-bold text-slate-500 text-sm">Roof Area (Sq Ft)</span>
-                                <span className="font-black text-sky-600 text-xl">50,000</span>
+                                <span className="font-black text-lime-600 text-xl">50,000</span>
                             </div>
                             <div className="flex gap-4">
-                                <div className="flex-1 bg-emerald-50 rounded-xl p-4 text-center border border-emerald-100">
-                                    <p className="text-2xl font-black text-emerald-600">650 kW</p>
-                                    <p className="text-[10px] font-bold text-emerald-800 uppercase tracking-wider mt-1">System Size</p>
+                                <div className="flex-1 bg-lime-50 rounded-xl p-4 text-center border border-lime-100">
+                                    <p className="text-2xl font-black text-lime-600">650 kW</p>
+                                    <p className="text-[10px] font-bold text-lime-800 uppercase tracking-wider mt-1">System Size</p>
                                 </div>
-                                <div className="flex-1 bg-amber-50 rounded-xl p-4 text-center border border-amber-100">
-                                    <p className="text-2xl font-black text-amber-600">$1.2M</p>
-                                    <p className="text-[10px] font-bold text-amber-800 uppercase tracking-wider mt-1">20-Yr Savings</p>
+                                <div className="flex-1 bg-green-50 rounded-xl p-4 text-center border border-green-100">
+                                    <p className="text-2xl font-black text-green-600">$1.2M</p>
+                                    <p className="text-[10px] font-bold text-green-800 uppercase tracking-wider mt-1">20-Yr Savings</p>
                                 </div>
                             </div>
-                            <button className="w-full bg-[#0f172a] hover:bg-slate-800 text-white font-bold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                            <button className="w-full bg-[#1a2e05] hover:bg-[#0a1a05] text-white font-bold py-3.5 rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
                                 Go to Advanced Calculator <ChevronRight size={16} />
                             </button>
                         </div>
@@ -382,13 +382,13 @@ function Impact() {
                             <div
                                 key={s.step}
                                 onMouseEnter={() => setActiveEcoStep(s.step)}
-                                className={`flex-1 rounded-2xl p-6 transition-all duration-300 cursor-pointer border ${activeEcoStep === s.step ? 'bg-emerald-600 text-white border-emerald-500 shadow-xl scale-105 z-10' : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'}`}
+                                className={`flex-1 rounded-2xl p-6 transition-all duration-300 cursor-pointer border ${activeEcoStep === s.step ? 'bg-lime-600 text-white border-lime-500 shadow-xl scale-105 z-10' : 'bg-white text-slate-500 border-slate-200 hover:bg-slate-50'}`}
                             >
-                                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black mb-4 ${activeEcoStep === s.step ? 'bg-white text-emerald-600' : 'bg-slate-100 text-slate-400'}`}>
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black mb-4 ${activeEcoStep === s.step ? 'bg-white text-lime-600' : 'bg-slate-100 text-slate-400'}`}>
                                     {s.step}
                                 </div>
-                                <h4 className={`font-black text-lg mb-2 ${activeEcoStep === s.step ? 'text-white' : 'text-[#0f172a]'}`}>{s.title}</h4>
-                                <p className={`text-sm leading-relaxed ${activeEcoStep === s.step ? 'text-emerald-50' : 'text-slate-500'}`}>{s.desc}</p>
+                                <h4 className={`font-black text-lg mb-2 ${activeEcoStep === s.step ? 'text-white' : 'text-[#1a2e05]'}`}>{s.title}</h4>
+                                <p className={`text-sm leading-relaxed ${activeEcoStep === s.step ? 'text-lime-50' : 'text-slate-500'}`}>{s.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -416,23 +416,23 @@ function Impact() {
                 </section>
 
                 {/* 11. EDUCATIONAL SCHOLARSHIPS (Accordion) */}
-                <section className="bg-sky-50 border border-sky-100 rounded-3xl p-8 md:p-12">
+                <section className="bg-lime-50 border border-lime-100 rounded-3xl p-8 md:p-12">
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>
-                            <div className="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center mb-6">
+                            <div className="w-16 h-16 bg-lime-100 text-lime-600 rounded-2xl flex items-center justify-center mb-6">
                                 <BookOpen size={32} />
                             </div>
                             <h2 className="text-3xl font-black text-[#0f172a] mb-4">Empowering the Next Generation</h2>
-                            <p className="text-sky-800 leading-relaxed mb-6">
+                            <p className="text-lime-800 leading-relaxed mb-6">
                                 We direct 5% of net profits to STEM education programs aimed at underserved communities, building a pipeline of diverse talent for the renewable sector.
                             </p>
                             <div className="flex -space-x-4 mb-4">
                                 {[1, 2, 3, 4].map(i => (
                                     <img key={i} className="w-12 h-12 rounded-full border-2 border-white object-cover" src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Student" />
                                 ))}
-                                <div className="w-12 h-12 rounded-full border-2 border-white bg-sky-200 text-sky-800 font-bold flex items-center justify-center text-xs">+2k</div>
+                                <div className="w-12 h-12 rounded-full border-2 border-white bg-lime-200 text-lime-800 font-bold flex items-center justify-center text-xs">+2k</div>
                             </div>
-                            <p className="text-sm font-bold text-sky-700">Students Supported Globally</p>
+                            <p className="text-sm font-bold text-lime-700">Students Supported Globally</p>
                         </div>
                         <div className="space-y-4">
                             {[
@@ -440,13 +440,13 @@ function Impact() {
                                 { q: "Trade School Apprenticeships", a: "Fully paid, 6-month hands-on training for high school graduates to become certified solar installers and electricians." },
                                 { q: "K-12 Solar Curriculum", a: "We donate solar learning kits and curriculum maps to 500 under-funded public schools annually." },
                             ].map((faq, i) => (
-                                <div key={i} className="bg-white rounded-2xl border border-sky-100 shadow-sm overflow-hidden">
+                                <div key={i} className="bg-white rounded-2xl border border-lime-100 shadow-sm overflow-hidden">
                                     <button
                                         onClick={() => setOpenAccordion(openAccordion === i ? null : i)}
-                                        className="w-full px-6 py-5 text-left font-bold text-[#0f172a] flex justify-between items-center hover:bg-sky-50/50"
+                                        className="w-full px-6 py-5 text-left font-bold text-[#0f172a] flex justify-between items-center hover:bg-lime-50/50"
                                     >
                                         {faq.q}
-                                        <ChevronDown className={`transform transition-transform ${openAccordion === i ? 'rotate-180 text-sky-500' : 'text-slate-400'}`} size={18} />
+                                        <ChevronDown className={`transform transition-transform ${openAccordion === i ? 'rotate-180 text-lime-500' : 'text-slate-400'}`} size={18} />
                                     </button>
                                     <div className={`px-6 pb-5 text-slate-600 text-sm leading-relaxed transition-all duration-300 ${openAccordion === i ? 'block' : 'hidden'}`}>
                                         {faq.a}
@@ -470,7 +470,7 @@ function Impact() {
                         ].map((lab, i) => (
                             <div key={i} className="flex-1 p-8 bg-white hover:bg-slate-50 transition-colors group cursor-crosshair">
                                 <h4 className="font-bold text-slate-500 text-sm uppercase tracking-wider mb-8">{lab.title}</h4>
-                                <p className="text-4xl font-black text-[#0f172a] mb-2 transform group-hover:scale-110 group-hover:text-emerald-500 transition-all origin-left">{lab.stat}</p>
+                                <p className="text-4xl font-black text-[#0f172a] mb-2 transform group-hover:scale-110 group-hover:text-lime-600 transition-all origin-left">{lab.stat}</p>
                                 <p className="text-sm font-medium text-slate-400">{lab.label}</p>
                             </div>
                         ))}
@@ -478,14 +478,14 @@ function Impact() {
                 </section>
 
                 {/* 13. LIVE DATA TERMINAL */}
-                <section className="bg-slate-900 rounded-3xl p-8 font-mono text-emerald-400 relative overflow-hidden shadow-2xl border border-slate-700">
+                <section className="bg-slate-900 rounded-3xl p-8 font-mono text-lime-400 relative overflow-hidden shadow-2xl border border-slate-700">
                     <div className="absolute top-4 right-4 flex gap-2">
                         <div className="w-3 h-3 rounded-full bg-rose-500"></div>
                         <div className="w-3 h-3 rounded-full bg-amber-500"></div>
-                        <div className="w-3 h-3 rounded-full bg-emerald-500"></div>
+                        <div className="w-3 h-3 rounded-full bg-lime-500"></div>
                     </div>
                     <div className="flex items-center gap-3 mb-6 border-b border-slate-800 pb-4">
-                        <Activity className="animate-pulse text-emerald-500" size={20} />
+                        <Activity className="animate-pulse text-lime-500" size={20} />
                         <h4 className="font-bold text-white tracking-widest text-sm">GLOBAL_TELEMETRY_STREAM_v2.4</h4>
                     </div>
                     <div className="space-y-2 h-48 overflow-hidden flex flex-col justify-end text-sm">
@@ -494,17 +494,17 @@ function Impact() {
                         ))}
                         <div className="flex items-center gap-2 mt-2">
                             <span>&gt;</span>
-                            <div className="w-3 h-5 bg-emerald-400 animate-pulse"></div>
+                            <div className="w-3 h-5 bg-lime-400 animate-pulse"></div>
                         </div>
                     </div>
                 </section>
 
                 {/* 14. ESG REPORT DOWNLOAD */}
-                <section className="frozen-glass rounded-3xl p-8 md:p-12 border border-emerald-500/30 bg-emerald-500/5 shadow-[0_0_50px_rgba(16,185,129,0.1)] relative">
-                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-emerald-100/50 to-transparent pointer-events-none rounded-3xl"></div>
+                <section className="frozen-glass rounded-3xl p-8 md:p-12 border border-lime-500/30 bg-lime-500/5 shadow-[0_0_50px_rgba(163,230,53,0.1)] relative">
+                    <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-l from-lime-100/50 to-transparent pointer-events-none rounded-3xl"></div>
                     <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
                         <div>
-                            <div className="w-16 h-16 bg-white shadow-md rounded-2xl flex items-center justify-center text-emerald-600 mb-6">
+                            <div className="w-16 h-16 bg-white shadow-md rounded-2xl flex items-center justify-center text-lime-600 mb-6">
                                 <ShieldCheck size={32} />
                             </div>
                             <h2 className="text-3xl font-black text-[#0f172a] mb-4">Complete Transparency</h2>
@@ -516,13 +516,13 @@ function Impact() {
                                 <div className="bg-white px-4 py-2 rounded-lg text-xs font-bold text-slate-500 border border-slate-200">14.2 MB</div>
                             </div>
                         </div>
-                        <div className="bg-white rounded-2xl p-6 shadow-xl border border-emerald-100 flex flex-col items-center justify-center text-center">
+                        <div className="bg-white rounded-2xl p-6 shadow-xl border border-lime-100 flex flex-col items-center justify-center text-center">
                             <h4 className="font-bold text-[#0f172a] mb-2">Get the Full Report</h4>
                             <p className="text-sm text-slate-500 mb-6">Enter your details to receive the 45-page PDF directly to your inbox.</p>
 
                             <button
                                 onClick={() => setIsLeadModalOpen(true)}
-                                className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 transition-all text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg"
+                                className="w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-600 hover:to-green-700 transition-all text-[#1a2e05] font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg"
                             >
                                 <Download size={20} /> Access Report Now
                             </button>
@@ -532,14 +532,14 @@ function Impact() {
                 </section>
 
                 {/* 15. FINAL CTA */}
-                <section className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
+                <section className="bg-gradient-to-r from-lime-600 to-green-600 rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
                     <div className="relative z-10 max-w-2xl mx-auto py-8">
                         <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to make an impact?</h2>
-                        <p className="text-emerald-100 text-lg mb-10">
+                        <p className="text-lime-100 text-lg mb-10">
                             Join the hundreds of enterprises actively reversing climate change while reducing operational costs.
                         </p>
-                        <button className="bg-white text-emerald-600 hover:bg-slate-50 font-black px-10 py-5 rounded-2xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3 mx-auto">
+                        <button className="bg-white text-lime-600 hover:bg-slate-50 font-black px-10 py-5 rounded-2xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center gap-3 mx-auto">
                             Start Your Partnership <ArrowRight size={20} />
                         </button>
                     </div>

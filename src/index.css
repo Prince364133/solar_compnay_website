@@ -6,32 +6,33 @@
 
   :root,
   .light {
-    --bg-main: #f0fdf4;
-    /* Light green tint */
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent: #10b981;
-    /* Emerald */
-    --accent-glow: rgba(16, 185, 129, 0.4);
+    --bg-main: #f7fee7;
+    /* Ultra-light parrot green tint */
+    --text-primary: #1a2e05;
+    /* Deep olive for better contrast */
+    --text-secondary: #4d7c0f;
+    /* Mid green */
+    --accent: #65a30d;
+    /* Vibrant Parrot Green - Lime 600 */
+    --accent-glow: rgba(101, 163, 13, 0.4);
 
-    /* Glassmorphism variables */
-    --glass-bg: rgba(255, 255, 255, 0.5);
-    --glass-border: rgba(255, 255, 255, 0.6);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    /* Glassmorphism variables - adjusted for light green context */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(101, 163, 13, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(77, 124, 15, 0.08);
   }
 
-  /* Dark theme overrides */
+  /* Dark theme overrides - maintaining green tech feel but deep */
   .dark {
-    --bg-main: #020617;
-    /* Very dark slate */
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --accent: #34d399;
-    /* Light emerald */
-    --accent-glow: rgba(52, 211, 153, 0.3);
+    --bg-main: #050a02;
+    --text-primary: #f7fee7;
+    --text-secondary: #a3e635;
+    --accent: #a3e635;
+    /* Brighter Parrot Green for dark mode */
+    --accent-glow: rgba(163, 230, 53, 0.3);
 
     --glass-bg: rgba(15, 23, 42, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(163, 230, 53, 0.2);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
   }
 
@@ -42,10 +43,10 @@
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
-    /* Aesthetic abstract background pattern */
+    /* Updated patterns with parrot green and lime overlays */
     background-image:
-      radial-gradient(circle at 15% 50%, rgba(16, 185, 129, 0.15), transparent 25%),
-      radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.15), transparent 25%);
+      radial-gradient(circle at 10% 20%, rgba(132, 204, 22, 0.1), transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(101, 163, 13, 0.1), transparent 40%);
     background-attachment: fixed;
   }
 }
@@ -71,5 +72,42 @@
 
   .text-glow {
     text-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  /* Premium Animations */
+  @keyframes slow-zoom {
+    0% {
+      transform: scale(1.0);
+    }
+
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 0.3;
+    }
+
+    50% {
+      transform: translateY(-20px) scale(1.1);
+      opacity: 0.6;
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+  }
+
+  .animate-float-1 {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-float-2 {
+    animation: float 12s ease-in-out infinite reverse;
   }
 }

@@ -43,7 +43,7 @@ function Slider({
         <div className="space-y-2">
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
-                    <span className="text-sm font-bold text-[#0f172a]">{label}</span>
+                    <span className="text-sm font-bold text-[#1a2e05]">{label}</span>
                     {tooltip && (
                         <div className="relative group">
                             <Info size={13} className="text-slate-400 cursor-help" />
@@ -53,14 +53,14 @@ function Slider({
                         </div>
                     )}
                 </div>
-                <span className="text-sm font-black text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-100">
+                <span className="text-sm font-black text-lime-600 bg-lime-50 px-2 py-0.5 rounded-lg border border-lime-100">
                     {value}{unit}
                 </span>
             </div>
             <input
                 type="range" min={min} max={max} step={step} value={value}
                 onChange={e => onChange(Number(e.target.value))}
-                className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-emerald-500"
+                className="w-full h-2 bg-slate-200 rounded-full appearance-none cursor-pointer accent-lime-500"
             />
             <div className="flex justify-between text-[10px] font-semibold text-slate-400">
                 <span>{min}{unit}</span><span>{max}{unit}</span>
@@ -92,7 +92,7 @@ function Select({
                 <select
                     value={value}
                     onChange={e => onChange(e.target.value)}
-                    className="w-full appearance-none bg-white/80 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-semibold text-[#0f172a] cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400 pr-8"
+                    className="w-full appearance-none bg-white/80 border border-slate-200 rounded-xl px-4 py-2.5 text-sm font-semibold text-[#1a2e05] cursor-pointer focus:outline-none focus:ring-2 focus:ring-lime-400 pr-8"
                 >
                     {options.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                 </select>
@@ -118,7 +118,7 @@ function Toggle({ label, value, onChange, tooltip }: { label: string; value: boo
             </div>
             <button
                 onClick={() => onChange(!value)}
-                className={`relative w-11 h-6 rounded-full transition-colors ${value ? 'bg-emerald-500' : 'bg-slate-200'}`}
+                className={`relative w-11 h-6 rounded-full transition-colors ${value ? 'bg-lime-500' : 'bg-slate-200'}`}
             >
                 <div className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform ${value ? 'translate-x-5' : ''}`} />
             </button>
@@ -260,19 +260,19 @@ function Calculator() {
     return (
         <div className="px-4 md:px-8 max-w-[1400px] mx-auto flex flex-col gap-10 pb-20 pt-10">
             <SEO
-                title="Enterprise ROI Calculator"
-                description="Calculate your commercial solar ROI, payback period, and 25-year energy savings instantly."
+                title="Sai Gayatri Greentech | Solar Cost & Savings Calculator"
+                description="Calculate your required system size, total investment, expected subsidy, and lifetime savings instantly."
             />
             {/* Header */}
             <div className="text-center">
-                <div className="inline-flex py-1.5 px-4 bg-amber-100 text-amber-700 font-bold text-xs uppercase tracking-widest rounded-full mb-4">
-                    Advanced ROI Calculator
+                <div className="inline-flex py-1.5 px-4 bg-lime-100 text-lime-700 font-bold text-xs uppercase tracking-widest rounded-full mb-4">
+                    Solar Cost & Savings Calculator
                 </div>
-                <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#0f172a]">
-                    Solar <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">Cost & ROI</span> Calculator
+                <h1 className="text-4xl md:text-5xl font-black mb-4 text-[#1a2e05]">
+                    See How Much You Can <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-green-600">Save</span>
                 </h1>
-                <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-lg">
-                    20 advanced parameters for a precise estimate of your solar investment — from panel type and battery storage to federal incentives, SREC revenue, and financing options.
+                <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+                    Enter your average monthly electricity bill to calculate your required system size, total investment, expected subsidy, and lifetime savings.
                 </p>
 
                 {/* Currency Toggle */}
@@ -281,7 +281,7 @@ function Calculator() {
                     <button
                         onClick={() => setCurrency('USD')}
                         className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-black transition-all ${currency === 'USD'
-                            ? 'bg-emerald-500 text-white shadow-md'
+                            ? 'bg-lime-500 text-white shadow-md'
                             : 'text-slate-500 hover:bg-slate-100'
                             }`}
                     >
@@ -290,7 +290,7 @@ function Calculator() {
                     <button
                         onClick={() => setCurrency('INR')}
                         className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-black transition-all ${currency === 'INR'
-                            ? 'bg-orange-500 text-white shadow-md'
+                            ? 'bg-green-600 text-white shadow-md'
                             : 'text-slate-500 hover:bg-slate-100'
                             }`}
                     >
@@ -315,8 +315,8 @@ function Calculator() {
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
                                 className={`flex items-center gap-2 px-5 py-4 text-sm font-bold whitespace-nowrap transition-all border-b-2 ${activeTab === tab.id
-                                    ? 'border-emerald-500 text-emerald-600 bg-white/40'
-                                    : 'border-transparent text-[var(--text-secondary)] hover:text-[#0f172a] hover:bg-white/20'
+                                    ? 'border-lime-500 text-lime-600 bg-white/40'
+                                    : 'border-transparent text-slate-600 hover:text-[#1a2e05] hover:bg-white/20'
                                     }`}
                             >
                                 {tab.icon}
@@ -331,8 +331,8 @@ function Calculator() {
                         {activeTab === 'system' && (
                             <div className="space-y-7 animate-in fade-in duration-300">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <Sun size={18} className="text-amber-500" />
-                                    <h3 className="font-black text-[#0f172a]">System Configuration</h3>
+                                    <Sun size={18} className="text-lime-600" />
+                                    <h3 className="font-black text-[#1a2e05]">System Configuration</h3>
                                 </div>
 
                                 {/* 1 */}
@@ -376,8 +376,8 @@ function Calculator() {
                         {activeTab === 'financial' && (
                             <div className="space-y-7 animate-in fade-in duration-300">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <DollarSign size={18} className="text-emerald-500" />
-                                    <h3 className="font-black text-[#0f172a]">Financial Parameters</h3>
+                                    <DollarSign size={18} className="text-lime-500" />
+                                    <h3 className="font-black text-[#1a2e05]">Financial Parameters</h3>
                                 </div>
 
                                 {/* 6 */}
@@ -410,14 +410,14 @@ function Calculator() {
                                     ]} />
 
                                 {financingType === 'loan' && (
-                                    <div className="space-y-5 pl-4 border-l-2 border-emerald-200">
+                                    <div className="space-y-5 pl-4 border-l-2 border-lime-200">
                                         <Slider label="Loan Interest Rate" value={loanInterestRate} min={2.0} max={12.0} step={0.25} unit="%"
                                             onChange={setLoanInterestRate}
                                             tooltip="Annual interest rate on your solar loan." />
                                         <Slider label="Loan Term" value={loanTermYears} min={5} max={25} step={1} unit=" yrs"
                                             onChange={setLoanTermYears}
                                             tooltip="Longer loans mean lower monthly payments but more interest paid." />
-                                        <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-700 font-medium">
+                                        <div className="bg-lime-50 border border-lime-100 rounded-xl p-4 text-sm text-lime-700 font-medium">
                                             Estimated monthly payment: <span className="font-black">{C.fmt(results.monthlyLoanPayment)}</span>
                                         </div>
                                     </div>
@@ -429,8 +429,8 @@ function Calculator() {
                         {activeTab === 'location' && (
                             <div className="space-y-7 animate-in fade-in duration-300">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <MapPin size={18} className="text-sky-500" />
-                                    <h3 className="font-black text-[#0f172a]">Location & Environment</h3>
+                                    <MapPin size={18} className="text-lime-600" />
+                                    <h3 className="font-black text-[#1a2e05]">Location & Environment</h3>
                                 </div>
 
                                 {/* 11 */}
@@ -454,13 +454,13 @@ function Calculator() {
                                     onChange={setShading}
                                     tooltip="Percentage of output lost due to trees, adjacent buildings, or rooftop obstructions. Microinverters can mitigate this." />
 
-                                <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
+                                <div className="bg-lime-50 border border-lime-100 rounded-2xl p-5">
                                     <div className="flex items-start gap-3">
-                                        <AlertCircle size={18} className="text-amber-500 mt-0.5 shrink-0" />
+                                        <AlertCircle size={18} className="text-lime-600 mt-0.5 shrink-0" />
                                         <div>
-                                            <p className="text-sm font-bold text-amber-800 mb-1">Estimated Annual Generation</p>
-                                            <p className="text-2xl font-black text-amber-700">{fmt(results.annualGenKWh)} kWh/year</p>
-                                            <p className="text-xs text-amber-600 mt-1">Based on your {systemSizeKW} kW system with {sunlightHours} hrs/day peak sun</p>
+                                            <p className="text-sm font-bold text-lime-900 mb-1">Estimated Annual Generation</p>
+                                            <p className="text-2xl font-black text-lime-700">{fmt(results.annualGenKWh)} kWh/year</p>
+                                            <p className="text-xs text-lime-600 mt-1">Based on your {systemSizeKW} kW system with {sunlightHours} hrs/day peak sun</p>
                                         </div>
                                     </div>
                                 </div>
@@ -471,8 +471,8 @@ function Calculator() {
                         {activeTab === 'battery' && (
                             <div className="space-y-7 animate-in fade-in duration-300">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <Battery size={18} className="text-violet-500" />
-                                    <h3 className="font-black text-[#0f172a]">Battery Storage System</h3>
+                                    <Battery size={18} className="text-lime-500" />
+                                    <h3 className="font-black text-[#1a2e05]">Battery Storage System</h3>
                                 </div>
 
                                 {/* 14 */}
@@ -514,7 +514,7 @@ function Calculator() {
                             <div className="space-y-7 animate-in fade-in duration-300">
                                 <div className="flex items-center gap-2 mb-2">
                                     <Settings size={18} className="text-slate-500" />
-                                    <h3 className="font-black text-[#0f172a]">Incentives & Advanced Settings</h3>
+                                    <h3 className="font-black text-[#1a2e05]">Incentives & Advanced Settings</h3>
                                 </div>
 
                                 {/* 17 */}
@@ -538,21 +538,21 @@ function Calculator() {
 
                                 <Slider label={`Annual O & M Cost`} value={maintenanceCostPerYear} min={0} max={5000} step={100} unit={` ${C.sym} `}
                                     onChange={setMaintenanceCostPerYear}
-                                    tooltip="Annual operations and maintenance (cleaning, monitoring, insurance). AeroSolar includes this in our maintenance plans." />
+                                    tooltip="Annual operations and maintenance (cleaning, monitoring, insurance). Sai Gayatri Greentech includes this in our maintenance plans." />
 
-                                <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-5 space-y-3">
-                                    <p className="text-sm font-bold text-emerald-800">Total Incentive Summary</p>
+                                <div className="bg-lime-50 border border-lime-100 rounded-2xl p-5 space-y-3">
+                                    <p className="text-sm font-bold text-lime-800">Total Incentive Summary</p>
                                     <div className="flex justify-between text-sm">
                                         <span className="text-slate-600">Federal ITC ({federalITC}%)</span>
-                                        <span className="font-black text-emerald-700">-{C.fmt(results.itcCredit)}</span>
+                                        <span className="font-black text-lime-700">-{C.fmt(results.itcCredit)}</span>
                                     </div>
                                     <div className="flex justify-between text-sm">
                                         <span className="text-slate-600">State Incentive ({stateIncentive}%)</span>
-                                        <span className="font-black text-emerald-700">-{C.fmt(results.stateCredit)}</span>
+                                        <span className="font-black text-lime-700">-{C.fmt(results.stateCredit)}</span>
                                     </div>
-                                    <div className="border-t border-emerald-200 pt-2 flex justify-between">
-                                        <span className="font-bold text-emerald-900">Net System Cost</span>
-                                        <span className="font-black text-emerald-800 text-lg">{C.fmt(results.netCost)}</span>
+                                    <div className="border-t border-lime-200 pt-2 flex justify-between">
+                                        <span className="font-bold text-lime-900">Net System Cost</span>
+                                        <span className="font-black text-lime-800 text-lg">{C.fmt(results.netCost)}</span>
                                     </div>
                                 </div>
                             </div>
@@ -564,24 +564,24 @@ function Calculator() {
                 <div className="flex flex-col gap-6">
 
                     {/* Main Results Card */}
-                    <div className="bg-gradient-to-br from-[#0a1628] to-[#0f2a1a] rounded-3xl p-8 text-white shadow-2xl border border-white/10 relative overflow-hidden">
-                        <div className="absolute -top-12 -right-12 text-emerald-500/10"><Zap size={200} /></div>
+                    <div className="bg-gradient-to-br from-[#0d1a04] to-[#1a2e05] rounded-3xl p-8 text-white shadow-2xl border border-white/10 relative overflow-hidden">
+                        <div className="absolute -top-12 -right-12 text-lime-500/10"><Zap size={200} /></div>
 
-                        <p className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-2 relative z-10">25-Year Net Savings</p>
-                        <div className="text-5xl md:text-6xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 relative z-10">
+                        <p className="text-lime-400 font-bold uppercase tracking-widest text-xs mb-2 relative z-10">25-Year Net Savings</p>
+                        <div className="text-5xl md:text-6xl font-black mb-1 text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-green-300 relative z-10">
                             {C.fmt(results.lifetimeSavings)}
                         </div>
-                        <p className="text-slate-400 text-sm mb-8 relative z-10">After all costs & incentives</p>
+                        <p className="text-lime-100/40 text-sm mb-8 relative z-10">After all costs & incentives</p>
 
                         {/* Key Metrics Grid */}
                         <div className="grid grid-cols-2 gap-3 relative z-10">
                             {[
                                 { label: 'Gross System Cost', value: `${C.fmt(results.totalGrossCost)} `, color: 'text-white' },
-                                { label: 'Total Incentives', value: `- ${C.fmt(results.itcCredit + results.stateCredit)} `, color: 'text-emerald-400' },
-                                { label: 'Net Investment', value: `${C.fmt(results.netCost)} `, color: 'text-sky-300' },
+                                { label: 'Total Incentives', value: `- ${C.fmt(results.itcCredit + results.stateCredit)} `, color: 'text-lime-400' },
+                                { label: 'Net Investment', value: `${C.fmt(results.netCost)} `, color: 'text-lime-200' },
                                 { label: 'Year 1 Savings', value: `${C.fmt(results.firstYearSavings)} `, color: 'text-amber-400' },
                                 { label: 'Payback Period', value: `${results.paybackYear} yrs`, color: 'text-violet-300' },
-                                { label: '25-Yr ROI', value: `${Math.round(results.roi)}% `, color: 'text-emerald-400' },
+                                { label: '25-Yr ROI', value: `${Math.round(results.roi)}% `, color: 'text-lime-400' },
                             ].map((m, i) => (
                                 <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-4">
                                     <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider mb-1">{m.label}</p>
@@ -592,7 +592,7 @@ function Calculator() {
 
                         {/* Get Proposal Button */}
                         <Link to="/contact" className="block mt-6 relative z-10">
-                            <button className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-900 font-black text-base py-4 rounded-2xl transition-all shadow-lg hover:shadow-emerald-500/40 hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <button className="w-full bg-gradient-to-r from-lime-500 to-green-600 hover:from-lime-400 hover:to-green-500 text-slate-950 font-black text-base py-4 rounded-2xl transition-all shadow-lg hover:shadow-lime-500/40 hover:scale-[1.02] flex items-center justify-center gap-2">
                                 Get Detailed Proposal <ChevronRight size={20} />
                             </button>
                         </Link>
@@ -601,29 +601,29 @@ function Calculator() {
                     {/* CO2 & Environment Card */}
                     <div className="frozen-glass rounded-3xl p-6 border border-white/60 shadow-xl">
                         <div className="flex items-center gap-2 mb-5">
-                            <Leaf size={18} className="text-emerald-500" />
-                            <h4 className="font-black text-[#0f172a]">Environmental Impact</h4>
+                            <Leaf size={18} className="text-lime-600" />
+                            <h4 className="font-black text-[#1a2e05]">Environmental Impact</h4>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-4 text-center">
-                                <p className="text-2xl font-black text-emerald-600">{Math.round(results.co2OffsetTons).toLocaleString()}</p>
-                                <p className="text-xs font-bold text-emerald-700 mt-1">Tons CO₂ Offset</p>
-                                <p className="text-[10px] text-emerald-500 mt-0.5">Over 25 years</p>
+                            <div className="bg-lime-50 border border-lime-100 rounded-2xl p-4 text-center">
+                                <p className="text-2xl font-black text-lime-600">{Math.round(results.co2OffsetTons).toLocaleString()}</p>
+                                <p className="text-xs font-bold text-lime-700 mt-1">Tons CO₂ Offset</p>
+                                <p className="text-[10px] text-lime-500 mt-0.5">Over 25 years</p>
                             </div>
-                            <div className="bg-teal-50 border border-teal-100 rounded-2xl p-4 text-center">
-                                <p className="text-2xl font-black text-teal-600">{results.treesEquivalent.toLocaleString()}</p>
-                                <p className="text-xs font-bold text-teal-700 mt-1 flex items-center gap-1 justify-center"><TreePine size={12} /> Trees Equivalent</p>
-                                <p className="text-[10px] text-teal-500 mt-0.5">Carbon absorption</p>
+                            <div className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
+                                <p className="text-2xl font-black text-green-600">{results.treesEquivalent.toLocaleString()}</p>
+                                <p className="text-xs font-bold text-green-700 mt-1 flex items-center gap-1 justify-center"><TreePine size={12} /> Trees Equivalent</p>
+                                <p className="text-[10px] text-green-500 mt-0.5">Carbon absorption</p>
                             </div>
-                            <div className="bg-sky-50 border border-sky-100 rounded-2xl p-4 text-center">
-                                <p className="text-2xl font-black text-sky-600">{fmt(results.annualGenKWh)}</p>
-                                <p className="text-xs font-bold text-sky-700 mt-1">kWh/yr Generated</p>
-                                <p className="text-[10px] text-sky-500 mt-0.5">Year 1, no degradation</p>
+                            <div className="bg-lime-50 border border-lime-100 rounded-2xl p-4 text-center">
+                                <p className="text-2xl font-black text-lime-600">{fmt(results.annualGenKWh)}</p>
+                                <p className="text-xs font-bold text-lime-700 mt-1">kWh/yr Generated</p>
+                                <p className="text-[10px] text-lime-500 mt-0.5">Year 1, no degradation</p>
                             </div>
-                            <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 text-center">
-                                <p className="text-2xl font-black text-amber-600">{systemSizeKW}</p>
-                                <p className="text-xs font-bold text-amber-700 mt-1">kW System Size</p>
-                                <p className="text-[10px] text-amber-500 mt-0.5">Peak capacity</p>
+                            <div className="bg-green-50 border border-green-100 rounded-2xl p-4 text-center">
+                                <p className="text-2xl font-black text-green-600">{systemSizeKW}</p>
+                                <p className="text-xs font-bold text-green-700 mt-1">kW System Size</p>
+                                <p className="text-[10px] text-green-500 mt-0.5">Peak capacity</p>
                             </div>
                         </div>
                     </div>
@@ -631,8 +631,8 @@ function Calculator() {
                     {/* Cumulative Savings Chart */}
                     <div className="frozen-glass rounded-3xl p-6 border border-white/60 shadow-xl">
                         <div className="flex items-center gap-2 mb-5">
-                            <TrendingUp size={18} className="text-sky-500" />
-                            <h4 className="font-black text-[#0f172a]">Cumulative Savings Over 25 Years</h4>
+                            <TrendingUp size={18} className="text-lime-600" />
+                            <h4 className="font-black text-[#1a2e05]">Cumulative Savings Over 25 Years</h4>
                         </div>
                         <div className="flex items-end gap-1.5 h-28">
                             {results.yearlyData.map((d, i) => {
@@ -641,11 +641,11 @@ function Calculator() {
                                 return (
                                     <div key={i} className="flex-1 flex flex-col justify-end h-full group relative">
                                         <div
-                                            className={`rounded-t-sm transition-all ${isPaid ? 'bg-emerald-500' : 'bg-slate-300'} hover:opacity-80`}
+                                            className={`rounded-t-sm transition-all ${isPaid ? 'bg-lime-500' : 'bg-slate-300'} hover:opacity-80`}
                                             style={{ height: `${pct}%` }}
                                         />
                                         {(i === results.paybackYear - 1) && (
-                                            <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[9px] font-black text-rose-600 whitespace-nowrap flex items-center gap-0.5">
+                                            <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-[9px] font-black text-green-600 whitespace-nowrap flex items-center gap-0.5">
                                                 <CheckCircle2 size={9} /> Paid
                                             </div>
                                         )}
@@ -658,31 +658,52 @@ function Calculator() {
                         </div>
                         <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-2">
                             <span>Year 1</span>
-                            <span className="text-emerald-500 font-black">Payback: Yr {results.paybackYear}</span>
+                            <span className="text-lime-600 font-black">Payback: Yr {results.paybackYear}</span>
                             <span>Year 25</span>
                         </div>
                         <div className="flex gap-4 mt-3 text-[10px] font-bold">
                             <div className="flex items-center gap-1 text-slate-400"><div className="w-3 h-3 bg-slate-300 rounded-sm" />Pre-payback</div>
-                            <div className="flex items-center gap-1 text-emerald-600"><div className="w-3 h-3 bg-emerald-500 rounded-sm" />Post-payback profit</div>
+                            <div className="flex items-center gap-1 text-lime-600"><div className="w-3 h-3 bg-lime-500 rounded-sm" />Post-payback profit</div>
                         </div>
                     </div>
 
                     {/* Guarantees */}
                     <div className="frozen-glass rounded-3xl p-5 border border-white/60 shadow-md">
                         <div className="flex items-center gap-3">
-                            <ShieldCheck size={20} className="text-emerald-500 shrink-0" />
+                            <ShieldCheck size={20} className="text-lime-500 shrink-0" />
                             <p className="text-sm text-[var(--text-secondary)]">
-                                <span className="font-black text-[#0f172a]">Performance Guaranteed.</span>{' '}
-                                All AeroSolar installations come with a 25-year linear power output guarantee and 10-year workmanship warranty.
+                                <span className="font-black text-[#1a2e05]">Performance Guaranteed.</span>{' '}
+                                All Sai Gayatri Greentech installations come with a 25-year linear power output guarantee and 10-year workmanship warranty.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            {/* FAQ Section */}
+            <section className="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12 mb-12">
+                <div className="text-center mb-10">
+                    <h2 className="text-3xl font-black text-[#1a2e05] mb-4">Got Questions? We Have Answers.</h2>
+                    <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">Frequently Asked Questions about going solar with Sai Gayatri Greentech.</p>
+                </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                    {[
+                        { q: "How much roof space is required for a 1kW solar system?", a: "Approximately 100 sq. ft. of shade-free roof space is required per kW." },
+                        { q: "What is the lifespan of your solar panels?", a: "Our premium solar panels come with a 25-year performance warranty." },
+                        { q: "How do I claim the government solar subsidy?", a: "We handle the entire PM Surya Ghar / State subsidy process for you. The subsidy is credited directly to your bank account after installation." },
+                        { q: "Do solar panels work during power cuts?", a: "On-grid systems safely shut down during power cuts (anti-islanding). For power backup, choose an Off-Grid or Hybrid system with batteries." }
+                    ].map((faq, i) => (
+                        <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                            <h4 className="font-bold text-[#1a2e05] mb-3 text-lg">{faq.q}</h4>
+                            <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* Bottom Disclaimer */}
             <p className="text-center text-xs text-slate-400 max-w-3xl mx-auto leading-relaxed">
-                This calculator provides estimates for planning purposes only. Actual savings depend on local utility rates, weather patterns, installation specifics, and applicable incentive programs. Contact AeroSolar for a site-specific engineering proposal.
+                This calculator provides estimates for planning purposes only. Actual savings depend on local utility rates, weather patterns, installation specifics, and applicable incentive programs. Contact Sai Gayatri Greentech for a site-specific engineering proposal.
             </p>
         </div>
     );

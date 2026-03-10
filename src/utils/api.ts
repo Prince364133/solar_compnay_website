@@ -16,7 +16,7 @@ export const submitForm = async (endpoint: string, data: any): Promise<{ success
                     resolve({ success: true, message: 'Audit consultation scheduled! An engineer will review your details.' });
                     break;
                 case '/api/newsletter':
-                    resolve({ success: true, message: 'Subscribed to AeroSolar industry updates.' });
+                    resolve({ success: true, message: 'Subscribed to Sai Gayatri Greentech industry updates.' });
                     break;
                 case '/api/lead-magnet':
                     resolve({ success: true, message: 'ESG Report unlocked. Your download will begin shortly.' });

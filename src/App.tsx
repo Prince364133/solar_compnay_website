@@ -11,6 +11,7 @@ import About from './pages/About';
 import Team from './pages/Team';
 import Calculator from './pages/Calculator';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import Careers from './pages/Careers';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
@@ -36,6 +37,7 @@ function AnimatedRoutes() {
                 <Route path="/subsidy" element={<PageTransition><Subsidy /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                 <Route path="/projects" element={<PageTransition><Projects /></PageTransition>} />
+                <Route path="/projects/:id" element={<PageTransition><ProjectDetail /></PageTransition>} />
                 <Route path="/careers" element={<PageTransition><Careers /></PageTransition>} />
                 <Route path="/insights" element={<PageTransition><Insights /></PageTransition>} />
                 <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />

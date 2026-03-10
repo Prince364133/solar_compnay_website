@@ -4,48 +4,7 @@ import { ArrowRight, MapPin, Building2 } from 'lucide-react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 
-const projects = [
-    {
-        id: '1',
-        title: 'Industrial Solar Hub',
-        client: 'Hyderabad Manufacturing Units',
-        location: 'Cherlapally, Hyderabad',
-        size: '1.2 MW',
-        type: 'Rooftop Solar Array',
-        image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80',
-        metrics: { co2: '1,500 Tons', homes: '450' }
-    },
-    {
-        id: '2',
-        title: 'Residential Green Park',
-        client: 'Housing Society Association',
-        location: 'Pragati Nagar, Hyderabad',
-        size: '250 KW',
-        type: 'Community Rooftop',
-        image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&q=80',
-        metrics: { co2: '320 Tons', homes: '80' }
-    },
-    {
-        id: '3',
-        title: 'Agricultural Power Unit',
-        client: 'Regional Farmer Cooperative',
-        location: 'Medak District, Telangana',
-        size: '500 KW',
-        type: 'Solar Irrigation System',
-        image: 'https://images.unsplash.com/photo-1536643209532-35dbf1aedc1e?auto=format&fit=crop&q=80',
-        metrics: { co2: '650 Tons', homes: 'N/A' }
-    },
-    {
-        id: '4',
-        title: 'Institutional Brightness',
-        client: 'Educational Trust',
-        location: 'Kukatpally, Hyderabad',
-        size: '150 KW',
-        type: 'On-Grid Solar System',
-        image: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&q=80',
-        metrics: { co2: '200 Tons', homes: '50' }
-    }
-];
+import { projects } from '../data/projects';
 
 function Projects() {
     const [filter, setFilter] = useState('All');

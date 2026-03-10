@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, MapPin, Building2, Calendar, CheckCircle2, TrendingUp, Zap } from 'lucide-react';
+import { ArrowLeft, MapPin, Building2, CheckCircle2, TrendingUp, Zap } from 'lucide-react';
 import { projects } from '../data/projects';
 import SEO from '../components/SEO';
 

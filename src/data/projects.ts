@@ -92,5 +92,98 @@ export const projects: Project[] = [
             { label: 'System Type', value: 'On-Grid with Net-Metering' },
             { label: 'Monitoring', value: 'Community Web Portal' }
         ]
+    },
+    {
+        id: '3',
+        title: 'Smart Commercial Microgrid',
+        client: 'GVK Sky City',
+        location: 'Banjara Hills, Hyderabad',
+        size: '500 KW',
+        type: 'Enterprise Microgrid',
+        image: '/commercial_solar_microgrid.png',
+        gallery: [
+            'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1449156059431-789995fd2ffc?auto=format&fit=crop&q=80'
+        ],
+        metrics: {
+            co2: '650 Tons',
+            homes: '120',
+            additional: [
+                { label: 'Business Savings', value: '₹75L/Year' },
+                { label: 'Peak Load Shaving', value: '45%' }
+            ]
+        },
+        description: 'A sophisticated solar microgrid designed for high-density business districts, providing reliable backup and significant energy cost reductions.',
+        challenge: 'Limited roof space in a high-rise environment required creative use of vertical surfaces and semi-transparent solar glass in the atrium.',
+        solution: 'Integrated custom vertical solar louvers and high-efficiency bifacial panels. The system is managed by an AI-driven energy storage controller that predicts demand peaks.',
+        results: 'The microgrid has reduced reliance on the main grid by 60% during peak hours, saving the enterprise over ₹75 Lakhs annually in demand charges.',
+        specs: [
+            { label: 'Panel Type', value: 'High-Density Bifacial + Solar Glass' },
+            { label: 'Storage', value: '250kWh LiFePO4 Energy Bank' },
+            { label: 'Control System', value: 'AI Smart Grid Controller' },
+            { label: 'Payout Period', value: '4.5 Years' }
+        ]
+    },
+    {
+        id: '4',
+        title: 'Agricultural Power Unit',
+        client: 'Telangana Farm Cluster',
+        location: 'Medak, Telangana',
+        size: '150 KW',
+        type: 'Irrigation Microgrid',
+        image: '/agricultural_solar_pump.png',
+        gallery: [
+            'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1523348830342-d01f9fc9336a?auto=format&fit=crop&q=80'
+        ],
+        metrics: {
+            co2: '180 Tons',
+            homes: '40',
+            additional: [
+                { label: 'Water Saved', value: '1.2M Liters/Yr' },
+                { label: 'Farm Profit', value: '+35%' }
+            ]
+        },
+        description: 'A sustainable solar irrigation system providing reliable water pumping and electricity to local farming communities, reducing reliance on expensive diesel pumps.',
+        challenge: 'Voltage fluctuations in the rural grid were damaging pump motors, and high diesel costs were making irrigation unaffordable for small-scale farmers.',
+        solution: 'Developed a robust solar pump array with variable frequency drives (VFD) and remote monitoring. The system surplus powers a local cold storage facility.',
+        results: 'Farmers have seen a 35% increase in crop yield due to reliable water access. Diesel consumption for irrigation has been eliminated entirely for the 25 participating farms.',
+        specs: [
+            { label: 'Pump Drive', value: 'VFD with Solar Optimizer' },
+            { label: 'System Type', value: 'Off-Grid with Backup' },
+            { label: 'Monitoring', value: 'SMS/Mobile App' },
+            { label: 'Warranty', value: '5 Year Performance' }
+        ]
+    },
+    {
+        id: '5',
+        title: 'Institutional Brightness',
+        client: 'City General Hospital',
+        location: 'Secunderabad, Hyderabad',
+        size: '350 KW',
+        type: 'Healthcare Rooftop',
+        image: '/institutional_solar_hospital.png',
+        gallery: [
+            'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80',
+            'https://images.unsplash.com/photo-1586773860418-d3b9da531dbb?auto=format&fit=crop&q=80'
+        ],
+        metrics: {
+            co2: '450 Tons',
+            homes: '90',
+            additional: [
+                { label: 'Bill Reduction', value: '55%' },
+                { label: 'Critical Uptime', value: '99.9%' }
+            ]
+        },
+        description: 'Priority solar installation for critical healthcare infrastructure, ensuring uninterrupted power for life-saving equipment and lighting.',
+        challenge: 'Sensitive medical equipment requires extremely stable power. Any grid interruption could be life-threatening, necessitating a zero-ms transition system.',
+        solution: 'Integrated high-precision inverters with a fast-acting UPS bridge. The rooftop panels are designed for maximum heat dissipation to maintain peak hospital-grade efficiency.',
+        results: 'The hospital has saved over ₹40 Lakhs in its first year of operation. More importantly, it has maintained 100% solar availability for its critical care units during grid outages.',
+        specs: [
+            { label: 'Inverter Grade', value: 'Medical/Industrial Pure Sine' },
+            { label: 'Switchover', value: 'Zero-Transition Bridge' },
+            { label: 'Panel Efficiency', value: '22.5% Peak' },
+            { label: 'Compliance', value: 'NABH/Healthcare Standards' }
+        ]
     }
 ];

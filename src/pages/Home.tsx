@@ -224,124 +224,140 @@ function Home() {
                 <div className="absolute top-40 -left-20 w-80 h-80 bg-lime-200/30 blur-[100px] rounded-full"></div>
                 <div className="absolute bottom-40 -right-20 w-80 h-80 bg-green-200/30 blur-[100px] rounded-full"></div>
 
-                <div className="px-4 md:px-8 max-w-7xl mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-                        <div className="max-w-2xl">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-100 border border-lime-200 text-lime-700 font-bold text-xs uppercase tracking-widest mb-4">
-                                <Zap size={14} className="fill-lime-600" /> Professional Grade
-                            </div>
-                            <h2 className="text-4xl md:text-5xl font-black mb-4 text-[#1a2e05] leading-tight">Elite Solar Infrastructure</h2>
-                            <p className="text-slate-700 text-lg font-medium mb-8">Engineered for maximum reliability and exceptional ROI across Industrial, Commercial, and Residential sectors.</p>
+                <div className="px-4 md:px-12 lg:px-16 max-w-[1800px] mx-auto">
+                    <div className="mb-14">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-100 border border-lime-200 text-lime-700 font-bold text-xs uppercase tracking-widest mb-4">
+                            <Zap size={14} className="fill-lime-600" /> Professional Grade
+                        </div>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 text-[#1a2e05] leading-tight">Elite Solar Infrastructure</h2>
+                        <p className="text-slate-700 text-xl font-medium max-w-3xl">Engineered for maximum reliability and exceptional ROI across Industrial, Commercial, and Residential sectors.</p>
+                    </div>
 
-                            {/* NEW: Premium Assets Showcase */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-lime-200/50 group mb-12"
-                            >
-                                <img
-                                    src="/elite_solar_industrial.png"
-                                    alt="Industrial Solar Installation Hyderabad by Sai Gayatri Greentech"
-                                    className="w-full h-[300px] object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e05]/60 to-transparent flex items-end p-8">
-                                    <div>
-                                        <p className="text-lime-400 font-bold uppercase tracking-widest text-xs mb-1">Live Project</p>
-                                        <h4 className="text-white font-bold text-xl">Industrial Solar Park Installation</h4>
+                    {/* NEW: Premium Assets Showcase - Expanded Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20 w-full">
+                        {[
+                            { id: '1', title: 'Industrial Solar Park', label: 'Industrial Case Study', capacity: '1.2 MW', location: 'Cherlapally', image: '/elite_solar_industrial.png' },
+                            { id: '3', title: 'Smart Commercial Microgrid', label: 'Commercial Case Study', capacity: '500 KW', location: 'Banjara Hills', image: '/commercial_solar_microgrid.png' },
+                            { id: '4', title: 'Agricultural Power Unit', label: 'Agricultural Case Study', capacity: '150 KW', location: 'Medak', image: '/agricultural_solar_pump.png' },
+                            { id: '5', title: 'Institutional Brightness', label: 'Institutional Case Study', capacity: '350 KW', location: 'Secunderabad', image: '/institutional_solar_hospital.png' }
+                        ].map((proj, idx) => (
+                            <Link key={proj.id} to={`/projects/${proj.id}`} className="block h-full w-full">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: idx * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-lime-200/50 group h-full flex flex-col hover:border-lime-400 transition-all duration-500 hover:shadow-lime-500/30"
+                                >
+                                    <div className="relative h-[480px] overflow-hidden">
+                                        <img
+                                            src={proj.image}
+                                            alt={proj.title}
+                                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e05] via-[#1a2e05]/30 to-transparent flex items-end p-8">
+                                            <div className="w-full">
+                                                <p className="text-lime-400 font-bold uppercase tracking-widest text-[11px] mb-2">{proj.label}</p>
+                                                <h4 className="text-white font-bold text-2xl mb-3 leading-tight">{proj.title}</h4>
+                                                <div className="flex items-center gap-3 text-white/70 text-sm font-semibold pt-4 border-t border-white/10">
+                                                    <span className="flex items-center gap-1.5"><Zap size={14} className="text-lime-400" /> {proj.capacity}</span>
+                                                    <span className="w-1 h-1 rounded-full bg-white/40"></span>
+                                                    <span className="flex items-center gap-1.5">{proj.location}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    {/* System Features Card */}
+                    <div className="relative group/card">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 to-green-500 rounded-[2.5rem] blur opacity-10 group-hover/card:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+                        <div className="relative bg-white rounded-[2.2rem] p-10 overflow-hidden text-slate-900 h-full border border-slate-200 shadow-xl shadow-lime-900/5">
+                            {/* Ornament */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/5 blur-[80px] -mr-32 -mt-32"></div>
+
+                            <div className="flex items-center gap-5 mb-10">
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-lime-400 blur-xl opacity-10 animate-pulse"></div>
+                                    <div className="relative w-16 h-16 bg-lime-50 rounded-2xl flex items-center justify-center border border-lime-200 shadow-sm">
+                                        <ShieldCheck className="text-lime-600" size={32} />
                                     </div>
                                 </div>
-                            </motion.div>
+                                <div>
+                                    <h3 className="text-3xl font-black tracking-tight text-[#1a2e05]">System Features</h3>
+                                    <p className="text-lime-600 text-sm font-bold uppercase tracking-widest">Built to Outperform</p>
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                {[
+                                    { title: "Grid Connected", desc: "Seamless utility integration" },
+                                    { title: "24/7 Reliability", desc: "Uninterrupted power supply" },
+                                    { title: "Flexible Install", desc: "Ground or rooftop ready" },
+                                    { title: "Intelligent AI Control", desc: "Smart energy optimization" },
+                                    { title: "High ROI", desc: "3-5 year payback average" },
+                                    { title: "Zero Maintenance", desc: "Minimal upkeep required" },
+                                    { title: "5-Year Guarantee", desc: "Full product backing" },
+                                    { title: "Govt. Subsidy", desc: "MNRE Support Included" }
+                                ].map((feat, i) => (
+                                    <div key={i} className="flex gap-4 group/item">
+                                        <div className="mt-1.5 w-5 h-5 rounded-full bg-lime-100 flex items-center justify-center border border-lime-200 group-hover/item:bg-lime-500 transition-colors duration-300">
+                                            <CheckCircle2 size={12} className="text-lime-600 group-hover:text-white" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-slate-900 leading-tight mb-1">{feat.title}</h4>
+                                            <p className="text-slate-500 text-xs leading-relaxed">{feat.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                        {/* System Features Card */}
-                        <div className="relative group/card">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 to-green-500 rounded-[2.5rem] blur opacity-10 group-hover/card:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-                            <div className="relative bg-white rounded-[2.2rem] p-10 overflow-hidden text-slate-900 h-full border border-slate-200 shadow-xl shadow-lime-900/5">
-                                {/* Ornament */}
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-lime-500/5 blur-[80px] -mr-32 -mt-32"></div>
+                    {/* Advantages Card */}
+                    <div className="relative group/card">
+                        <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-lime-500 rounded-[2.5rem] blur opacity-10 group-hover/card:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+                        <div className="relative bg-white rounded-[2.2rem] p-10 overflow-hidden h-full border border-slate-200 shadow-xl shadow-slate-200/50">
+                            {/* Ornament */}
+                            <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/5 blur-[80px] -mr-32 -mb-32"></div>
 
-                                <div className="flex items-center gap-5 mb-10">
-                                    <div className="relative">
-                                        <div className="absolute inset-0 bg-lime-400 blur-xl opacity-10 animate-pulse"></div>
-                                        <div className="relative w-16 h-16 bg-lime-50 rounded-2xl flex items-center justify-center border border-lime-200 shadow-sm">
-                                            <ShieldCheck className="text-lime-600" size={32} />
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-3xl font-black tracking-tight text-[#1a2e05]">System Features</h3>
-                                        <p className="text-lime-600 text-sm font-bold uppercase tracking-widest">Built to Outperform</p>
+                            <div className="flex items-center gap-5 mb-10">
+                                <div className="relative">
+                                    <div className="absolute inset-0 bg-green-400 blur-xl opacity-10"></div>
+                                    <div className="relative w-16 h-16 bg-white rounded-2xl flex items-center justify-center border border-slate-200 shadow-sm">
+                                        <TrendingUp className="text-green-600" size={32} />
                                     </div>
                                 </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                                    {[
-                                        { title: "Grid Connected", desc: "Seamless utility integration" },
-                                        { title: "24/7 Reliability", desc: "Uninterrupted power supply" },
-                                        { title: "Flexible Install", desc: "Ground or rooftop ready" },
-                                        { title: "Intelligent AI Control", desc: "Smart energy optimization" },
-                                        { title: "High ROI", desc: "3-5 year payback average" },
-                                        { title: "Zero Maintenance", desc: "Minimal upkeep required" },
-                                        { title: "5-Year Guarantee", desc: "Full product backing" },
-                                        { title: "Govt. Subsidy", desc: "MNRE Support Included" }
-                                    ].map((feat, i) => (
-                                        <div key={i} className="flex gap-4 group/item">
-                                            <div className="mt-1.5 w-5 h-5 rounded-full bg-lime-100 flex items-center justify-center border border-lime-200 group-hover/item:bg-lime-500 transition-colors duration-300">
-                                                <CheckCircle2 size={12} className="text-lime-600 group-hover:text-white" />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-slate-900 leading-tight mb-1">{feat.title}</h4>
-                                                <p className="text-slate-500 text-xs leading-relaxed">{feat.desc}</p>
-                                            </div>
-                                        </div>
-                                    ))}
+                                <div>
+                                    <h3 className="text-3xl font-black tracking-tight text-[#1a2e05]">Key Advantages</h3>
+                                    <p className="text-green-600 text-sm font-bold uppercase tracking-widest">Industry Leading Benefits</p>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* Advantages Card */}
-                        <div className="relative group/card">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-lime-500 rounded-[2.5rem] blur opacity-10 group-hover/card:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-                            <div className="relative bg-white rounded-[2.2rem] p-10 overflow-hidden h-full border border-slate-200 shadow-xl shadow-slate-200/50">
-                                {/* Ornament */}
-                                <div className="absolute bottom-0 right-0 w-64 h-64 bg-green-500/5 blur-[80px] -mr-32 -mb-32"></div>
-
-                                <div className="flex items-center gap-5 mb-10">
-                                    <div className="relative">
-                                        <div className="absolute inset-0 bg-green-400 blur-xl opacity-10"></div>
-                                        <div className="relative w-16 h-16 bg-white rounded-2xl flex items-center justify-center border border-slate-200 shadow-sm">
-                                            <TrendingUp className="text-green-600" size={32} />
+                            <ul className="space-y-6">
+                                {[
+                                    { icon: Sun, title: "Rooftop Integration", desc: "Maximize vacant space for productive generation." },
+                                    { icon: Battery, title: "Energy Freedom", desc: "Consume self-generated power & feed back excess." },
+                                    { icon: ClipboardCheck, title: "Monthly Settlements", desc: "Automated credit settlement for surplus energy." },
+                                    { icon: Banknote, title: "Guaranteed Payouts", desc: "DISCOM payments at Government-decided rates." },
+                                    { icon: Leaf, title: "Zero Carbon Footprint", desc: "Environment-friendly, sustainable green energy." }
+                                ].map((adv, i) => (
+                                    <li key={i} className="flex gap-5 group/item cursor-default">
+                                        <div className="w-12 h-12 rounded-xl bg-lime-50 border border-lime-100 flex items-center justify-center text-lime-600 group-hover/item:bg-lime-600 group-hover/item:text-white transition-all duration-300 shadow-sm">
+                                            <adv.icon size={22} />
                                         </div>
-                                    </div>
-                                    <div>
-                                        <h3 className="text-3xl font-black tracking-tight text-[#1a2e05]">Key Advantages</h3>
-                                        <p className="text-green-600 text-sm font-bold uppercase tracking-widest">Industry Leading Benefits</p>
-                                    </div>
-                                </div>
-
-                                <ul className="space-y-6">
-                                    {[
-                                        { icon: Sun, title: "Rooftop Integration", desc: "Maximize vacant space for productive generation." },
-                                        { icon: Battery, title: "Energy Freedom", desc: "Consume self-generated power & feed back excess." },
-                                        { icon: ClipboardCheck, title: "Monthly Settlements", desc: "Automated credit settlement for surplus energy." },
-                                        { icon: Banknote, title: "Guaranteed Payouts", desc: "DISCOM payments at Government-decided rates." },
-                                        { icon: Leaf, title: "Zero Carbon Footprint", desc: "Environment-friendly, sustainable green energy." }
-                                    ].map((adv, i) => (
-                                        <li key={i} className="flex gap-5 group/item cursor-default">
-                                            <div className="w-12 h-12 rounded-xl bg-lime-50 border border-lime-100 flex items-center justify-center text-lime-600 group-hover/item:bg-lime-600 group-hover/item:text-white transition-all duration-300 shadow-sm">
-                                                <adv.icon size={22} />
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-[#1a2e05] text-lg mb-1 leading-tight group-hover/item:translate-x-1 transition-transform">{adv.title}</h4>
-                                                <p className="text-slate-600 text-sm leading-relaxed">{adv.desc}</p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                                        <div>
+                                            <h4 className="font-bold text-[#1a2e05] text-lg mb-1 leading-tight group-hover/item:translate-x-1 transition-transform">{adv.title}</h4>
+                                            <p className="text-slate-600 text-sm leading-relaxed">{adv.desc}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -384,10 +400,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 5: Stats / Numbers Strip */}
-            <section className="bg-transparent py-24 text-[#0d1a04] relative overflow-hidden">
+            < section className="bg-transparent py-24 text-[#0d1a04] relative overflow-hidden" >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-lime-400/10 blur-[120px] rounded-full pointer-events-none"></div>
                 <div className="px-4 md:px-8 max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-14">
@@ -430,10 +446,10 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 6: Who We Serve */}
-            <section className="px-4 md:px-8 max-w-7xl mx-auto py-12">
+            < section className="px-4 md:px-8 max-w-7xl mx-auto py-12" >
                 <h2 className="text-center text-4xl font-black text-[#1a2e05] mb-4">Who We Serve</h2>
                 <p className="text-center text-[var(--text-secondary)] text-lg mb-12 max-w-2xl mx-auto">Providing customized solar solutions based on your specific property and energy needs.</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -454,10 +470,10 @@ function Home() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 7: Testimonials */}
-            <section className="px-4 md:px-8 max-w-7xl mx-auto py-12">
+            < section className="px-4 md:px-8 max-w-7xl mx-auto py-12" >
                 <h2 className="text-center text-4xl font-black text-[#1a2e05] mb-12">What Our Customers Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {[
@@ -481,10 +497,10 @@ function Home() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 8: Calculator Teaser */}
-            <section className="px-4 md:px-8 max-w-7xl mx-auto">
+            < section className="px-4 md:px-8 max-w-7xl mx-auto" >
                 <div className="bg-gradient-to-r from-lime-100 to-green-50 rounded-3xl p-10 md:p-16 border border-lime-200 flex flex-col md:flex-row items-center justify-between gap-10 shadow-lg">
                     <div className="flex-1 text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-black text-[#1a2e05] mb-4">Want to Know Your Solar Savings?</h2>
@@ -502,10 +518,10 @@ function Home() {
                         </Link>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 9: How It Works */}
-            <section className="px-4 md:px-8 max-w-7xl mx-auto py-12" id="how-it-works">
+            < section className="px-4 md:px-8 max-w-7xl mx-auto py-12" id="how-it-works" >
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-black mb-4 text-[#1a2e05]">How Solar Power Works for Your Home</h2>
                     <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">6 Simple Steps from Sunlight to Savings</p>
@@ -529,9 +545,9 @@ function Home() {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section >
 
-        </div>
+        </div >
     );
 }
 
